@@ -30,7 +30,7 @@ export default class Home extends Component {
         
         <p>Hi!I like to read books and play minecraft in rest times.</p>
         <p>My favorite kind of book is called <em>'Warriors'.</em> <a href="http://www.warriorcats.com/">Warriors website</a></p>
-        <p>I like computer programming learning by the best teacher ever, Mikey!!!!!!!!!!!</p>
+        <p>I like computer programming.</p>
       
         <p>{post}</p>
         <input
