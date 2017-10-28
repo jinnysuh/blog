@@ -1,0 +1,12 @@
+App listening on port 80!
+::1 - - [28/Oct/2017:07:07:20 +0000] "GET / HTTP/1.1" 200 601 4.763 ms
+::1 - - [28/Oct/2017:07:07:20 +0000] "GET /static/css/main.9eb26b8d.css HTTP/1.1" 200 203 1.166 ms
+::1 - - [28/Oct/2017:07:07:20 +0000] "GET /css/bootstrap.min.css HTTP/1.1" 200 121200 3.402 ms
+::1 - - [28/Oct/2017:07:07:20 +0000] "GET /static/js/main.833e5fc6.js HTTP/1.1" 200 475345 2.235 ms
+::1 - - [28/Oct/2017:07:07:20 +0000] "GET /service-worker.js HTTP/1.1" 200 3224 0.453 ms
+::1 - - [28/Oct/2017:07:07:20 +0000] "GET /favicon.ico HTTP/1.1" 200 24838 0.622 ms
+::1 - - [28/Oct/2017:07:07:20 +0000] "GET /service-worker.js HTTP/1.1" 200 3224 0.275 ms
+::1 - - [28/Oct/2017:07:07:20 +0000] "GET /static/css/main.9eb26b8d.css HTTP/1.1" 304 - 1.192 ms
+::1 - - [28/Oct/2017:07:07:20 +0000] "GET /index.html?_sw-precache=7753151eb648818660db47425a55ea55 HTTP/1.1" 200 601 2.325 ms
+::1 - - [28/Oct/2017:07:07:20 +0000] "GET /static/media/sheet.4a93aae5.png HTTP/1.1" 200 11316 2.183 ms
+::1 - - [28/Oct/2017:07:07:20 +0000] "GET /static/js/main.833e5fc6.js HTTP/1.1" 304 - 0.781 ms
