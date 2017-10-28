@@ -22,7 +22,7 @@ export default class Home extends Component {
           width: '300px'
         }}/></a>
         <p className="App-intro">
-          <strong>Subscribe to my Channel!</strong>
+          <strong>helloooooooo</strong>
         </p>
         
        <Video videoCode="xB2wfk7XJZw" />
