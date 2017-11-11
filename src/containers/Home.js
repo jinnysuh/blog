@@ -48,7 +48,7 @@ export default class Home extends Component {
           className="btn btn-default"
           onClick={() => this.setState({popupOn: true})}
         >
-          OK
+          Done
         </button>
       
        

@@ -29,7 +29,7 @@ export default function Home() {
       <Video videoCode="gHQB7tYcJqQ"/>
       <p>.</p>
       <p>.</p>
-      <h2>BedWars Part 3 Coming Soon</h2>
+      <h2>Pug Life Part 2 Coming Soon</h2>
     </div>
   )
 }
