@@ -136,7 +136,7 @@ const Game = observer(class Game extends Component {
         { (currentstate === states.Splash) ? <Splash /> : null }
         { (currentstate === states.Splash) ? <Ready /> : null }
         { fgs.map( (fg) => ( <Fg fg={fg} key={fg.id} /> )     )}
-        <h1>FLAPPYBIRD GAME</h1>
+        <h1><strong>FLAPPYBIRD GAME</strong></h1>
         <h2>click to make the bird float and go through the green pillars!</h2>
         
       </div>
