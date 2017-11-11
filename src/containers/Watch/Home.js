@@ -6,7 +6,7 @@ export default function Home() {
     <div>
       <h1>Fun Minecraft Videos!</h1>
       <Video videoCode="0JnzM8E88KA"/>
-       <h2>*NEW!*</h2>
+       <h2><strong>*NEW!*</strong></h2>
        <Video videoCode="fGl5T6AhvWs"/>
       <Video videoCode="5upz6oAMlm4"/>
        <Video videoCode= "g5MXupG7kPI"/>
