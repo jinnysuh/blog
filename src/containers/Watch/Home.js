@@ -5,8 +5,9 @@ export default function Home() {
   return (
     <div>
       <h1>Fun Minecraft Videos!</h1>
+      <Video videoCode= "g5MXupG7kPI"/>
+       <h2>*NEW!*</h2>
       <Video videoCode="_zZaHaHFd5E"/>
-      <h2>*NEW!*</h2>
       <Video videoCode="x6Ah7qBgnKQ"/>
       <Video videoCode="fGl5T6AhvWs"/>
       <Video videoCode="5upz6oAMlm4"/>

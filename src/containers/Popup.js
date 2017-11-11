@@ -15,7 +15,7 @@ export default function Popup({onHide, show, text}) {
                     className="btn btn-default"
                     onClick={onHide}
                 >
-                    OK
+                    Done
                 </div>
             </Modal.Footer>
         </Modal>
