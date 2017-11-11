@@ -7,12 +7,12 @@ export default function Home() {
       <h1>Fun Minecraft Videos!</h1>
       <Video videoCode="0JnzM8E88KA"/>
        <h2>*NEW!*</h2>
-       <Video videoCode="x6Ah7qBgnKQ"/>
-      <Video videoCode="fGl5T6AhvWs"/>
+       <Video videoCode="fGl5T6AhvWs"/>
       <Video videoCode="5upz6oAMlm4"/>
        <Video videoCode= "g5MXupG7kPI"/>
       <Video videoCode="_zZaHaHFd5E"/>
       <Video videoCode="fjXs5wNpgZQ"/>
+      <Video videoCode="x6Ah7qBgnKQ"/>
       <Video videoCode="976wSavslj0"/>
       <Video videoCode="1nHZm4Elbm8"/>
       <Video videoCode="jYQhUaWbh3E"/>
