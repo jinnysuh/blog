@@ -29,7 +29,7 @@ export default class Home extends Component {
         <p>-- Made by <strong><em>Mikey</em>. and <em>Jinny</em></strong></p>
         
         <p>Hi!I like to read books and play minecraft in rest times.</p>
-        <p>My favorite kind of book is called <em>'Warriors'.</em> <a href="http://www.warriorcats.com/">Warriors website</a></p>
+        <p>My favorite kind of book is called <em>'Magnus Chase' writen by Rick Riordan.</em> </p>
         <p>I like computer programming and Im still working on my website!</p>
       
         <p>{post}</p>
