@@ -6,7 +6,7 @@ export default class Home extends Component {
   constructor() {
     super()
     this.state = {
-      post: 'write your username',
+      
       popupOn: false
     }
   }
@@ -36,7 +36,7 @@ export default class Home extends Component {
         <input
           value={post}
           onChange={event => this.setState({post: event.target.value})}
-          placeholder="write it and press enter"
+          placeholder="write your username"
           onKeyUp={event => {
             if (event.key === 'Enter') {
               this.setState({popupOn: true})
