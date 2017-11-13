@@ -9,7 +9,7 @@ export default function Navbar() {
       <div className="container-fluid">
         <div className="navbar-header">
           <Link className="navbar-brand" to="/">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdTZwhTWAI6CyUV4yIgoI1-km124CHew-Q3W6qRtbm2RhjblZ3rQ" width="40"/>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdTZwhTWAI6CyUV4yIgoI1-km124CHew-Q3W6qRtbm2RhjblZ3rQ" width="50"/>
             Home
           </Link>
         </div>

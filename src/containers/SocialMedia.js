@@ -27,6 +27,7 @@ export default function Minecraft() {
         width= "150px"/>
         <p>hypixel</p>
         </a>
+        <p>Contact me: jinnysuh2006@gmail.com</p> 
 
     </div>
   )
