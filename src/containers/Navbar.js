@@ -9,7 +9,7 @@ export default function Navbar() {
       <div className="container-fluid">
         <div className="navbar-header">
           <Link className="navbar-brand" to="/">
-            <img src="http://hotphotosfree.com/sites/default/files/styles/medium/public/field/image/758351232451569cc65c586af0e08f98.jpg?itok=5jRSP1XP" width="40"/>
+            <img src="https://www.google.co.kr/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwinn_3z1LvXAhVGwLwKHaTKAB8QjRwIBw&url=https%3A%2F%2Ftwitter.com%2Fmrmustachepy&psig=AOvVaw2Z7gKMfctPz9Jdp7kz38ef&ust=1510666326612632" width="40"/>
             Home
           </Link>
         </div>
