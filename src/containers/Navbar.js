@@ -32,9 +32,10 @@ export default function Navbar() {
            width="300px"/>
            </li>
            <li>
-           <img src={socialMedia} width="40"/>
-           
-           </li>
+             <img src= "" 
+             width= "300px"/>
+             <Link to="/Minecraft">Minecraft</Link>
+             </li>
         </ul>
        
       </div>
