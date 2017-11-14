@@ -28,14 +28,15 @@ export default function Navbar() {
             <Link to="/SocialMedia">SocialMedia</Link>
           </li>
           <li>
+             <img src= "https://cdn.worldvectorlogo.com/logos/minecraft-1.svg" 
+             width= "50px"/>
+             <Link to="/Minecraft">Minecraft</Link>
+             </li>
+          <li>
           <img src= "http://getmespark.com/wp-content/uploads/welcome_thumb_tacks_1600_clr_9661.png"
            width="300px"/>
            </li>
-           <li>
-             <img src= "" 
-             width= "300px"/>
-             <Link to="/Minecraft">Minecraft</Link>
-             </li>
+           
         </ul>
        
       </div>
