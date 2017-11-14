@@ -28,6 +28,7 @@ export default function Minecraft() {
         <p>hypixel</p>
         </a>
         <p>Contact me: jinnysuh2006@gmail.com</p> 
+        <p>Discord : https://discord.gg/5DsQab *Join my server!*</p>
 
     </div>
   )

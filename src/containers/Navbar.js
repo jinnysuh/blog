@@ -31,6 +31,10 @@ export default function Navbar() {
           <img src= "http://getmespark.com/wp-content/uploads/welcome_thumb_tacks_1600_clr_9661.png"
            width="300px"/>
            </li>
+           <li>
+           <img src={socialMedia} width="40"/>
+           
+           </li>
         </ul>
        
       </div>
