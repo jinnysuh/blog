@@ -5,7 +5,7 @@ import Navbar from './containers/Navbar';
 import Watch from './containers/Watch';
 import SocialMedia from './containers/SocialMedia';
 import Game from './containers/Game'
-import Minecraft from './containers/Minecraft'
+import Minecraft from './containers/Minecraft';
 import {Route, Switch} from 'react-router-dom'
 
 class App extends Component {
