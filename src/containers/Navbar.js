@@ -29,7 +29,7 @@ export default function Navbar() {
           </li>
           <li>
              <img src= "https://cdn.worldvectorlogo.com/logos/minecraft-1.svg" 
-             width= "50px"/>
+             width= "40px"/>
              <Link to="/Minecraft">Minecraft</Link>
              </li>
           <li>
