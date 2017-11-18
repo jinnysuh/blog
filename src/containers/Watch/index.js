@@ -13,7 +13,10 @@ export default function Videos() {
         <Route path="/Watch/1" component={FirstPage} />
       </Switch>
       <button className="btn btn-primary">
-        <Link style={{color: '#fff'}} to="/Watch/1">Next Page</Link>
+        <Link style={{color: '#fff'}} to="/Watch">to Page 1</Link>
+      </button>
+      <button className="btn btn-primary">
+        <Link style={{color: '#fff'}} to="/Watch/1">to Page 2</Link>
       </button>
    
     </div>
