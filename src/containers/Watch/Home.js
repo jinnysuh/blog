@@ -5,8 +5,12 @@ export default function Home() {
   return (
     <div>
       <h1>Fun Minecraft Videos!</h1>
-      <Video videoCode="0JnzM8E88KA"/>
+       <Video videoCode="ceNygo1EXYA"/>
        <h2><strong>*NEW!*</strong></h2>
+       <Video videoCode="Op3PtO_pMJo"/>
+       <Video videoCode="Sp09bUCEcAc"/>
+       <Video videoCode="6jIrsS23HBM"/>
+       <Video videoCode="0JnzM8E88KA"/>
        <Video videoCode="fGl5T6AhvWs"/>
       <Video videoCode="5upz6oAMlm4"/>
        <Video videoCode= "g5MXupG7kPI"/>
@@ -29,7 +33,8 @@ export default function Home() {
       <Video videoCode="gHQB7tYcJqQ"/>
       <p>.</p>
       <p>.</p>
-      <h2>Pug Life Part 2 Coming Soon</h2>
+      <h2>UHC Champions part 2 Coming Soon</h2>
+      <p>Copyright Black Plasma Studios All Rights belongs to Black Plasma Studios.</p>
     </div>
   )
 }

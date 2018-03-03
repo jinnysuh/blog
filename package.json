@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "emotion": "^9.0.2",
+    "emotions": "^0.0.1",
     "mobx": "^3.3.0",
     "mobx-react": "^4.3.3",
     "morgan": "^1.9.0",
