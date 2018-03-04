@@ -178,7 +178,7 @@ const Game = observer(
           {currentstate === states.Splash ? <Ready /> : null}
           {fgs.map(fg => <Fg fg={fg} key={fg.id} />)}
           <h1>
-            <strong>FLAPPYBIRD GAME</strong>
+            <strong><font color="pink">FLAPPYBIRD GAME</font></strong>
           </h1>
           <h2>
             click to make the bird float and go through the green pillars!

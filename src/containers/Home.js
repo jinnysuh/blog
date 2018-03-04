@@ -23,7 +23,7 @@ export default class Home extends Component {
           />
         </a>
         <p className="App-intro">
-          <strong>Welcome to my website!!</strong>
+          <strong><font color="sky blue">Welcome </font>to my website!!</strong>
         </p>
 
         <Video videoCode="xB2wfk7XJZw" />
