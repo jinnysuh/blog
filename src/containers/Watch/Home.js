@@ -34,7 +34,7 @@ export default function Home() {
       <p>.</p>
       <p>.</p>
       <h2>UHC Champions part 2 Coming Soon</h2>
-      <p>Copyright Black Plasma Studios All Rights belongs to Black Plasma Studios.</p>
+      <p> © Copyright Black Plasma Studios All Rights belongs to Black Plasma Studios.</p>
     </div>
   )
 }
