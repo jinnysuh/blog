@@ -14,7 +14,7 @@ export default function Minecraft() {
             width: "200px"
           }}
         />
-        <p>youtube</p>
+        <p>Youtube</p>
       </a>
 
       <a href="https://www.twin-kle.com/users/jinny">
@@ -22,7 +22,7 @@ export default function Minecraft() {
           src="https://upload.wikimedia.org/wikipedia/commons/4/42/Blue_square_T.PNG"
           width="150px"
         />
-        <p>twinkle</p>
+        <p>Twinkle</p>
       </a>
       <a href="https://youtu.be/xRMxeqReX8A">
         {" "}
@@ -33,7 +33,7 @@ export default function Minecraft() {
           src="https://pbs.twimg.com/profile_images/892182725960105986/mUnwMuh3.jpg"
           width="150px"
         />
-        <p>hypixel</p>
+        <p>Hypixel</p>
       </a>
       <p>Discord : https://discord.gg/5DsQab *Join my server!*</p>
     </div>
