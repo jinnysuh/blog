@@ -16,9 +16,9 @@ export default class Home extends Component {
       <div>
         <a href="https://www.youtube.com/channel/UCFckiz3s8f4GTG8v11lk1cA">
           <img
-            src="https://s3.ap-northeast-2.amazonaws.com/twinkle-seoul/pictures/284/1074.jpg"
+            src="http://www.haytersite.com/static/media/jinnnnyyyyyy.342402ad.png"
             style={{
-              width: "300px"
+              width: "550px"
             }}
           />
         </a>
