@@ -4,9 +4,9 @@ import Video from '../../components/Video'
 export default function Home() {
   return (
     <div>
-      <h1>Fun Minecraft Videos!</h1>
+      <h1><font color="red">Fun</font><font color="orange"> Minecraft </font> <font color="green">Videos!</font></h1>
        <Video videoCode="ceNygo1EXYA"/>
-       <h2><strong>*NEW!*</strong></h2>
+       <h2><strong><font color="sky blue">NEW!</font></strong></h2>
        <Video videoCode="Op3PtO_pMJo"/>
        <Video videoCode="Sp09bUCEcAc"/>
        <Video videoCode="6jIrsS23HBM"/>
