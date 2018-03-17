@@ -183,7 +183,9 @@ const Game = observer(
           <h2>
             click to make the bird float and go through the green pillars!
           </h2>
+
         </div>
+      
       );
     }
   }

@@ -5,7 +5,7 @@ import Navbar from './containers/Navbar';
 import Watch from './containers/Watch';
 import SocialMedia from './containers/SocialMedia';
 import Game from './containers/Game'
-import Minecraft from './containers/Minecraft';
+import AboutME from './containers/AboutME';
 import {Route, Switch} from 'react-router-dom'
 
 class App extends Component {
@@ -32,7 +32,7 @@ class App extends Component {
           <Route path="/Watch" component={Watch} />
           <Route path="/SocialMedia" component={SocialMedia} />
           <Route path="/Game" component={() => <Game store={this.props.store} game={this.props.game} />} />
-          <Route path="/Minecraft" component={Minecraft} />
+          <Route path="/AboutME" component={AboutME} />
         </Switch>
       </div>
     );

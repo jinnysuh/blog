@@ -36,10 +36,10 @@ export default function Navbar() {
           </li>
           <li>
             <img
-              src="https://cdn.worldvectorlogo.com/logos/minecraft-1.svg"
+              src="https://cdn4.iconfinder.com/data/icons/clouds/512/MobileMe_512x512.png"
               width="40px"
             />
-            <Link to="/Minecraft">Minecraft</Link>
+            <Link to="/AboutME">AboutME</Link>
           </li>
           <li>
             <img
