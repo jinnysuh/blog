@@ -9,15 +9,19 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-default">
       <div className="container-fluid">
-        <div className="navbar-header">
-          <Link className="navbar-brand" to="/">
+        
+
+        <ul className="nav navbar-nav">
+          <li>
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdTZwhTWAI6CyUV4yIgoI1-km124CHew-Q3W6qRtbm2RhjblZ3rQ"
-              width="60"
+              src="https://jb-associates.leapwp.com.au/wp-content/uploads/sites/563/2017/05/are-you-looking-at-building-or-buying-a-new-home-1.png"
+              width="40px"
             />
-            Home
-          </Link>
-        </div>
+            <Link to="/">Home</Link>
+          </li>
+          </ul>
+     
+      
         <ul className="nav navbar-nav">
           <li>
             <img

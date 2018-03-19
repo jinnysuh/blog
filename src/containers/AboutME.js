@@ -15,10 +15,12 @@ export default function AboutMe() {
       <p><font size="5">I like skiing, Programming, Playing Minecraft, and Reading Books</font></p>
       <h2> <font color="gray"> My Favorite Things</font></h2>
       <p><font size="5">My favorite food: <font color="orange">Pizza</font></font></p>
-      <p><font size="5">My favorite book: <font color="sky blue">Magnus Chase </font></font></p>
+      <p><font size="5">My favorite book: <font color="purple">Magnus Chase </font></font></p>
       <p><font size="5">My favorite game: <font color="green">Minecraft</font></font></p>
-      <p><font size="5">My favorite Super Hero: <font color="red">Spiderman</font> & <font color="purple">Black Panther</font> </font></p>
-      
+      <p><font size="5">My favorite Super Hero: <font color="red">Spiderman</font> & Black Panther</font></p>
+      <h3><font color="pink">My Specialty</font></h3>
+      <p><font size="5">I love to <font color="sky blue">Ski</font> and I use to go to Gonjiam Resort.</font></p>
+      <p><font size="5">Also, I am good at making <font color="brown">chocolate</font> muffins.</font></p>
       </section>
       <section
         className={css`
@@ -36,13 +38,18 @@ export default function AboutMe() {
           <img
             src="https://minecraft.net/static/pages/img/servers/servers-hub-3.3048acef5b82.png"
             style={{
-              width: "300px"
+              width: "250px"
             }}
           />
-          <img src=" https://i.pinimg.com/originals/49/d7/f9/49d7f9e2d48e5b224851d5338662f253.jpg"
+          <img src="https://orig00.deviantart.net/2506/f/2016/070/f/2/civil_war_black_panther___transparent_background__by_camo_flauge-d9urf1c.png"
           style={{
-            width: "300px"
+            width: "250px"
           }}/>
+          <img src="https://mail.google.com/mail/u/0/?ui=2&ik=bc6735f044&view=fimg&th=1623ea75d156b09d&attid=0.1.1&disp=emb&attbid=ANGjdJ8LdRXYcUU8voWi5PQ8b0Hfo084mmCMMI0El7p4Nf-_wtZJ-4Rpzm12YgbmThgl_ArlC0a0O99lkjA21o5gMn_90dqq9TkVUXtqWHddHHjh13vhiOTM8nmCSJY&sz=s0-l75-ft&ats=1521469580780&rm=1623ea75d156b09d&zw&atsh=1"
+               style={{
+            width: "550px"
+          }}/>
+          
         </div>
       </section>
     </div>
