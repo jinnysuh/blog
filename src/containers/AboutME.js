@@ -45,7 +45,7 @@ export default function AboutMe() {
           style={{
             width: "250px"
           }}/>
-          <img src="https://mail.google.com/mail/u/0/?ui=2&ik=bc6735f044&view=fimg&th=1623ea75d156b09d&attid=0.1.1&disp=emb&attbid=ANGjdJ8LdRXYcUU8voWi5PQ8b0Hfo084mmCMMI0El7p4Nf-_wtZJ-4Rpzm12YgbmThgl_ArlC0a0O99lkjA21o5gMn_90dqq9TkVUXtqWHddHHjh13vhiOTM8nmCSJY&sz=s0-l75-ft&ats=1521469580780&rm=1623ea75d156b09d&zw&atsh=1"
+          <img src="/skiphotoedited.png"
                style={{
             width: "550px"
           }}/>
