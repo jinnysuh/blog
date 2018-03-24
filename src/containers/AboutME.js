@@ -36,12 +36,12 @@ export default function AboutMe() {
       >
         <div>
           <img
-            src="https://minecraft.net/static/pages/img/servers/servers-hub-3.3048acef5b82.png"
+            src="/minecraft_island.png"
             style={{
               width: "250px"
             }}
           />
-          <img src="https://orig00.deviantart.net/2506/f/2016/070/f/2/civil_war_black_panther___transparent_background__by_camo_flauge-d9urf1c.png"
+          <img src="/black_panther.png"
           style={{
             width: "250px"
           }}/>
