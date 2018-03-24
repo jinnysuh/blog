@@ -45,9 +45,9 @@ export default function AboutMe() {
           style={{
             width: "250px"
           }}/>
-          <img src="/skiphotoedited.png"
+          <img src="/magnus_chase.png"
                style={{
-            width: "550px"
+            width: "500px"
           }}/>
           
         </div>
