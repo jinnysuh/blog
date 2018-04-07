@@ -248,7 +248,7 @@ export default class Home extends Component {
                 onChange={event =>
                   this.setState({ signUpUsernameInput: event.target.value })
                 }
-                placeholder="write your username"
+                placeholder="Write your username"
               />
               <input
                 value={signUpPasswordInput}
@@ -256,7 +256,7 @@ export default class Home extends Component {
                 onChange={event =>
                   this.setState({ signUpPasswordInput: event.target.value })
                 }
-                placeholder="write your password"
+                placeholder="Write your password"
               />
               <input
                 value={signUpPasswordConfirm}
@@ -264,7 +264,7 @@ export default class Home extends Component {
                 onChange={event =>
                   this.setState({ signUpPasswordConfirm: event.target.value })
                 }
-                placeholder="write your password"
+                placeholder=" Confirm your password"
               />
               <button
                 className="btn btn-default"
