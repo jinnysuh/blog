@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import Popup from './Popup';
-import Video from '../components/Video';
-import { css } from 'emotion';
+import React, { Component } from "react";
+import Popup from "./Popup";
+import Video from "../components/Video";
+import { css } from "emotion";
 export default class Home extends Component {
   constructor() {
     super();
@@ -15,37 +15,30 @@ export default class Home extends Component {
     return (
       <div
         style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center'
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center"
         }}
       >
-        <a href="https://www.youtube.com/channel/UCFckiz3s8f4GTG8v11lk1cA">
-          <img
-            src="http://www.haytersite.com/static/media/jinnnnyyyyyy.342402ad.png"
-            style={{
-              width: '550px'
-            }}
-          />
-        </a>
+       
         <div
           className="App-intro"
           style={{
-            width: '100%',
-            height: '5rem',
-            display: 'flex',
-            justifyContent: 'center'
+            width: "100%",
+            height: "5rem",
+            display: "flex",
+            justifyContent: "center"
           }}
         >
           <div
             style={{
-              position: 'relative',
-              width: '50%'
+              position: "relative",
+              width: "50%"
             }}
           >
             <div
               className={css`
-                font-size: 2rem;
+                font-size: 3.2rem;
                 text-align: center;
                 font-weight: bold;
                 line-height: 1;
@@ -62,7 +55,7 @@ export default class Home extends Component {
                   display: block;
                   width: 100%;
                   text-align: center;
-                  content: 'Welcome to my website!!';
+                  content: "Welcome To Jinny's Website";
                   position: absolute;
                   top: 0;
                   left: 0;
@@ -117,25 +110,54 @@ export default class Home extends Component {
               }
             `}
             >
-              <span style={{ color: 'black' }}>Welcome to my website!!</span>
+        
+              <span style={{ color: "black" }}>
+                <font color="sky blue">
+                  <font size="6">Welcome To Jinny's Website</font>
+                </font>
+              </span>
             </div>
           </div>
         </div>
-
-        <Video videoCode="xB2wfk7XJZw" />
-        <p>
-          -- Made by{' '}
-          <strong>
-            <em>Mikey</em>. and <em>Jinny</em>
-          </strong>
-        </p>
-
-        <p>Hi!I like to read books and play minecraft in rest times.</p>
-        <p>
-          My favorite kind of book is called{' '}
-          <em>'Magnus Chase' writen by Rick Riordan.</em>{' '}
-        </p>
-        <p>I like computer programming and Im still working on my website!</p>
+        <section>
+        <a href="https://www.youtube.com/channel/UCFckiz3s8f4GTG8v11lk1cA">
+          <img
+            src="https://cdn.discordapp.com/attachments/379149212081848322/429546815516311563/jinnyee.png"
+            style={{
+             height: "200px"
+            }}
+          />
+        </a>
+       </section>
+        <section
+          className={css`
+            background: black;
+            width: 30%;
+            margin-left: 1rem;
+            display: flex;
+            color: white;
+            align-items: left;
+            justify-content: left;
+            margin-right: 1rem;
+          `}
+        >
+          <div>
+            <p>
+              - Made by{" "}
+              <font size="5">
+                <em>Mikey</em>. and <em>Jinny</em>
+              </font>
+            </p>
+            <p>
+              <font size="5">
+                Hi guys I'm just a ordinary 6-grade kid who really likes
+                programming and science. I like to read books or play minecraft
+                at free times. Subscribe to my <font color="red">YOU</font>TUBE
+                channel!
+              </font>
+            </p>
+          </div>
+        </section>
 
         <p>{post}</p>
         <input
@@ -143,7 +165,24 @@ export default class Home extends Component {
           onChange={event => this.setState({ post: event.target.value })}
           placeholder="write your username"
           onKeyUp={event => {
-            if (event.key === 'Enter') {
+            if (event.key === "Enter") {
+              this.setState({ popupOn: true });
+            }
+          }}
+        />
+        <Popup
+          show={popupOn}
+          onHide={() => this.setState({ popupOn: false })}
+          text={post}
+        />
+
+        <p>{post}</p>
+        <input
+          value={post}
+          onChange={event => this.setState({ post: event.target.value })}
+          placeholder="write your password"
+          onKeyUp={event => {
+            if (event.key === "Enter") {
               this.setState({ popupOn: true });
             }
           }}
@@ -157,7 +196,7 @@ export default class Home extends Component {
           className="btn btn-default"
           onClick={() => this.setState({ popupOn: true })}
         >
-          Done
+          Log In/Sign Up
         </button>
       </div>
     );

@@ -38,12 +38,6 @@ export default function Navbar() {
             <font size="5.2">ℹ️ AboutME</font>
           </Link>
         </li>
-        <li>
-          <img
-            src="https://nordicdairycongress.com/sites/default/files/billeder/nyheder/colourbox15033372.jpg"
-            width="300px"
-          />
-        </li>
       </ul>
     </div>
   );

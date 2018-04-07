@@ -8,7 +8,7 @@ export default function Header() {
             backgroundImage: "http://www.haytersite.com/static/media/jinnnnyyyyyy.342402ad.png",
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center center',
-            backgroundSize: '8 %'
+            backgroundSize: '100 %'
           }}
         >
             <h2 style={{color: '#cc3300'}}>
