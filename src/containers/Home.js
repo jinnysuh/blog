@@ -1,39 +1,70 @@
-import React, { Component } from "react";
-import Popup from "./Popup";
-import Video from "../components/Video";
-import { css } from "emotion";
+import React, { Component } from 'react';
+import Video from '../components/Video';
+import { css } from 'emotion';
+import URL from '../constants/URL';
+import request from 'axios';
+
 export default class Home extends Component {
-  constructor() {
-    super();
-    this.state = {
-      popupOn: false
-    };
+  state = {
+    userId: undefined,
+    username: '',
+    loginUsernameInput: '',
+    loginPasswordInput: '',
+    signUpUsernameInput: '',
+    signUpPasswordInput: '',
+    signUpPasswordConfirm: ''
+  };
+
+  async componentDidMount() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      try {
+        const { data: { userId, username } } = await request.get(
+          `${URL}/users/session`,
+          {
+            headers: {
+              authorization: token
+            }
+          }
+        );
+        this.setState({ userId, username });
+      } catch (error) {
+        console.error(error);
+      }
+    }
   }
 
   render() {
-    const { post, popupOn } = this.state;
+    const {
+      modalShown,
+      username,
+      loginUsernameInput,
+      loginPasswordInput,
+      signUpUsernameInput,
+      signUpPasswordInput,
+      signUpPasswordConfirm
+    } = this.state;
     return (
       <div
         style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center"
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center'
         }}
       >
-       
         <div
           className="App-intro"
           style={{
-            width: "100%",
-            height: "5rem",
-            display: "flex",
-            justifyContent: "center"
+            width: '100%',
+            height: '5rem',
+            display: 'flex',
+            justifyContent: 'center'
           }}
         >
           <div
             style={{
-              position: "relative",
-              width: "50%"
+              position: 'relative',
+              width: '50%'
             }}
           >
             <div
@@ -110,8 +141,7 @@ export default class Home extends Component {
               }
             `}
             >
-        
-              <span style={{ color: "black" }}>
+              <span style={{ color: 'black' }}>
                 <font color="sky blue">
                   <font size="6">Welcome To Jinny's Website</font>
                 </font>
@@ -120,15 +150,15 @@ export default class Home extends Component {
           </div>
         </div>
         <section>
-        <a href="https://www.youtube.com/channel/UCFckiz3s8f4GTG8v11lk1cA">
-          <img
-            src="https://cdn.discordapp.com/attachments/379149212081848322/429546815516311563/jinnyee.png"
-            style={{
-             height: "200px"
-            }}
-          />
-        </a>
-       </section>
+          <a href="https://www.youtube.com/channel/UCFckiz3s8f4GTG8v11lk1cA">
+            <img
+              src="https://cdn.discordapp.com/attachments/379149212081848322/429546815516311563/jinnyee.png"
+              style={{
+                height: '200px'
+              }}
+            />
+          </a>
+        </section>
         <section
           className={css`
             background: black;
@@ -143,7 +173,7 @@ export default class Home extends Component {
         >
           <div>
             <p>
-              - Made by{" "}
+              - Made by{' '}
               <font size="5">
                 <em>Mikey</em>. and <em>Jinny</em>
               </font>
@@ -158,47 +188,161 @@ export default class Home extends Component {
             </p>
           </div>
         </section>
-
-        <p>{post}</p>
-        <input
-          value={post}
-          onChange={event => this.setState({ post: event.target.value })}
-          placeholder="write your username"
-          onKeyUp={event => {
-            if (event.key === "Enter") {
-              this.setState({ popupOn: true });
-            }
-          }}
-        />
-        <Popup
-          show={popupOn}
-          onHide={() => this.setState({ popupOn: false })}
-          text={post}
-        />
-
-        <p>{post}</p>
-        <input
-          value={post}
-          onChange={event => this.setState({ post: event.target.value })}
-          placeholder="write your password"
-          onKeyUp={event => {
-            if (event.key === "Enter") {
-              this.setState({ popupOn: true });
-            }
-          }}
-        />
-        <Popup
-          show={popupOn}
-          onHide={() => this.setState({ popupOn: false })}
-          text={post}
-        />
-        <button
-          className="btn btn-default"
-          onClick={() => this.setState({ popupOn: true })}
-        >
-          Log In/Sign Up
-        </button>
+        {username && (
+          <div style={{ marginTop: '1rem' }}>
+            <p>Hello {username}!!</p>
+            <button className="btn btn-default" onClick={this.onLogOut}>
+              Log Out
+            </button>
+          </div>
+        )}
+        {!username && (
+          <div
+            className={css`
+              display: flex;
+            `}
+          >
+            <section
+              className={css`
+                display: flex;
+                flex-direction: column;
+                margin-top: 1rem;
+              `}
+            >
+              <p>Log In</p>
+              <input
+                value={loginUsernameInput}
+                onChange={event =>
+                  this.setState({ loginUsernameInput: event.target.value })
+                }
+                placeholder="write your username"
+              />
+              <input
+                value={loginPasswordInput}
+                type="password"
+                onChange={event =>
+                  this.setState({ loginPasswordInput: event.target.value })
+                }
+                placeholder="write your password"
+              />
+              <button
+                className="btn btn-default"
+                style={{ marginTop: '1rem' }}
+                onClick={this.onLogIn}
+                disabled={this.loginButtonDisabled()}
+              >
+                Log In
+              </button>
+            </section>
+            <section
+              className={css`
+                display: flex;
+                flex-direction: column;
+                margin-top: 1rem;
+                margin-left: 1rem;
+              `}
+            >
+              <p>Sign Up</p>
+              <input
+                value={signUpUsernameInput}
+                onChange={event =>
+                  this.setState({ signUpUsernameInput: event.target.value })
+                }
+                placeholder="write your username"
+              />
+              <input
+                value={signUpPasswordInput}
+                type="password"
+                onChange={event =>
+                  this.setState({ signUpPasswordInput: event.target.value })
+                }
+                placeholder="write your password"
+              />
+              <input
+                value={signUpPasswordConfirm}
+                type="password"
+                onChange={event =>
+                  this.setState({ signUpPasswordConfirm: event.target.value })
+                }
+                placeholder="write your password"
+              />
+              <button
+                className="btn btn-default"
+                style={{ marginTop: '1rem' }}
+                onClick={this.onSignUp}
+                disabled={this.signUpButtonDisabled()}
+              >
+                Sign Up
+              </button>
+            </section>
+          </div>
+        )}
       </div>
     );
   }
+
+  onSignUp = async () => {
+    const { signUpUsernameInput, signUpPasswordInput } = this.state;
+    try {
+      const { data: { alreadyExists, token, userId } } = await request.post(
+        `${URL}/users`,
+        {
+          username: signUpUsernameInput,
+          password: signUpPasswordInput
+        }
+      );
+      if (alreadyExists) return alert('User already exists');
+      localStorage.setItem('token', token);
+      this.setState({
+        userId,
+        username: signUpUsernameInput
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  onLogIn = async () => {
+    const { loginUsernameInput, loginPasswordInput } = this.state;
+    try {
+      const { data: { token, userId } } = await request.get(
+        `${URL}/users?username=${loginUsernameInput}&password=${loginPasswordInput}`
+      );
+      localStorage.setItem('token', token);
+      this.setState({
+        userId,
+        username: loginUsernameInput
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  onLogOut = async () => {
+    localStorage.removeItem('token');
+    this.setState({
+      userId: undefined,
+      username: ''
+    });
+  };
+
+  loginButtonDisabled = () => {
+    const { loginUsernameInput, loginPasswordInput } = this.state;
+    let result = false;
+    if (!loginUsernameInput || !loginPasswordInput) result = true;
+    return result;
+  };
+
+  signUpButtonDisabled = () => {
+    const {
+      signUpUsernameInput,
+      signUpPasswordInput,
+      signUpPasswordConfirm
+    } = this.state;
+    let result = false;
+    if (!signUpUsernameInput || !signUpPasswordInput || !signUpPasswordConfirm)
+      result = true;
+    if (signUpPasswordConfirm !== signUpPasswordInput) result = true;
+    return result;
+  };
 }
