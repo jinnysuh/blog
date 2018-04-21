@@ -5,10 +5,10 @@ export default function Header() {
         <div
           className="App-header"
           style={{
-            backgroundImage: "http://www.haytersite.com/static/media/jinnnnyyyyyy.342402ad.png",
+            backgroundImage: "https://cdn.discordapp.com/attachments/379149212081848322/429546815516311563/jinnyee.png",
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center center',
-            backgroundSize: '100 %'
+            backgroundSize: '200 %'
           }}
         >
             <h2 style={{color: '#cc3300'}}>

@@ -152,20 +152,21 @@ export default class Home extends Component {
         <section>
           <a href="https://www.youtube.com/channel/UCFckiz3s8f4GTG8v11lk1cA">
             <img
-              src="https://cdn.discordapp.com/attachments/379149212081848322/429546815516311563/jinnyee.png"
+              src="https://media.discordapp.net/attachments/383855767402577920/434602039197171722/unknown.png"
               style={{
-                height: '200px'
+                width: "400px"
               }}
             />
           </a>
+          
         </section>
         <section
           className={css`
-            background: black;
+            background: white;
             width: 30%;
             margin-left: 1rem;
             display: flex;
-            color: white;
+            color: black;
             align-items: left;
             justify-content: left;
             margin-right: 1rem;
@@ -178,8 +179,9 @@ export default class Home extends Component {
                 <em>Mikey</em>. and <em>Jinny</em>
               </font>
             </p>
+            
             <p>
-              <font size="5">
+              <font size="6">
                 Hi guys I'm just a ordinary 6-grade kid who really likes
                 programming and science. I like to read books or play minecraft
                 at free times. Subscribe to my <font color="red">YOU</font>TUBE
@@ -188,11 +190,12 @@ export default class Home extends Component {
             </p>
           </div>
         </section>
+        
         {username && (
           <div style={{ marginTop: '1rem' }}>
             <p>Hello {username}!!</p>
             <button className="btn btn-default" onClick={this.onLogOut}>
-              Log Out
+             Log Out
             </button>
           </div>
         )}
