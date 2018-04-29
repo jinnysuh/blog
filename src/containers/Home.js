@@ -142,6 +142,7 @@ export default class Home extends Component {
             `}
             >
               <span style={{ color: 'black' }}>
+              
                 <font color="sky blue">
                   <font size="6">Welcome To Jinny's Website</font>
                 </font>
@@ -152,7 +153,7 @@ export default class Home extends Component {
         <section>
           <a href="https://www.youtube.com/channel/UCFckiz3s8f4GTG8v11lk1cA">
             <img
-              src="https://media.discordapp.net/attachments/383855767402577920/434602039197171722/unknown.png"
+              src="https://media.discordapp.net/attachments/383855767402577920/440109000282079233/gekpiintro.png"
               style={{
                 width: "400px"
               }}
@@ -173,6 +174,7 @@ export default class Home extends Component {
           `}
         >
           <div>
+          <font size="4">👆 This guy is my mascotte, Gekpi</font>
             <p>
               - Made by{' '}
               <font size="5">
@@ -182,7 +184,7 @@ export default class Home extends Component {
             
             <p>
               <font size="6">
-                Hi guys I'm just a ordinary 6-grade kid who really likes
+                Hi guys I'm just an ordinary 6-grade kid who really likes
                 programming and science. I like to read books or play minecraft
                 at free times. Subscribe to my <font color="red">YOU</font>TUBE
                 channel!
