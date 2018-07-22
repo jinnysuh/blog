@@ -181,7 +181,7 @@ const Game = observer(
             <strong><font color="pink">FLAPPYBIRD GAME</font></strong>
           </h1>
           <h2>
-            click to make the bird float and go through the green pillars!
+            click to make the bird float and go through the <font color="green">green</font> pillars!
           </h2>
 
         </div>

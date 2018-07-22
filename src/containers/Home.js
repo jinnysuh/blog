@@ -144,7 +144,7 @@ export default class Home extends Component {
               <span style={{ color: 'black' }}>
               
                 <font color="sky blue">
-                  <font size="6">Welcome To Jinny's Website</font>
+                  <font size="6">Welcome <font color="pink">To Jinny's Website</font></font>
                 </font>
               </span>
             </div>
@@ -174,7 +174,7 @@ export default class Home extends Component {
           `}
         >
           <div>
-          <font size="4">👆 This guy is my mascotte, Gekpi</font>
+          <font size="4">⬆ This guy is my mascotte, Gekpi</font>
             <p>
               - Made by{' '}
               <font size="5">
@@ -192,6 +192,7 @@ export default class Home extends Component {
             </p>
           </div>
         </section>
+        
         
         {username && (
           <div style={{ marginTop: '1rem' }}>
@@ -214,7 +215,7 @@ export default class Home extends Component {
                 margin-top: 1rem;
               `}
             >
-              <p>Log In</p>
+              <p>Sign In</p>
               <input
                 value={loginUsernameInput}
                 onChange={event =>
@@ -236,7 +237,7 @@ export default class Home extends Component {
                 onClick={this.onLogIn}
                 disabled={this.loginButtonDisabled()}
               >
-                Log In
+                Sign In
               </button>
             </section>
             <section
