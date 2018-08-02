@@ -144,7 +144,7 @@ export default class Home extends Component {
               <span style={{ color: 'black' }}>
               
                 <font color="sky blue">
-                  <font size="6">Welcome <font color="pink">To Jinny's Website</font></font>
+                  <font size="6">Welcome To Jinny's Website</font>
                 </font>
               </span>
             </div>
@@ -153,9 +153,10 @@ export default class Home extends Component {
         <section>
           <a href="https://www.youtube.com/channel/UCFckiz3s8f4GTG8v11lk1cA">
             <img
-              src="https://media.discordapp.net/attachments/383855767402577920/440109000282079233/gekpiintro.png"
+              src="https://cdn.discordapp.com/attachments/444739722388963329/474381568383647754/Jinnydolly.jpg"
               style={{
-                width: "400px"
+                width: "600px",
+                height: '200px'
               }}
             />
           </a>
@@ -174,8 +175,7 @@ export default class Home extends Component {
           `}
         >
           <div>
-          <font size="4">⬆ This guy is my mascotte, Gekpi</font>
-            <p>
+             <p>
               - Made by{' '}
               <font size="5">
                 <em>Mikey</em>. and <em>Jinny</em>

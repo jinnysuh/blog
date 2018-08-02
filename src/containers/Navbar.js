@@ -8,6 +8,7 @@ const socialMedia =
   "https://image.freepik.com/free-vector/social-media-icons-with-watercolor-design_1379-864.jpg";
 export default function Navbar() {
   return (
+   
     <div className="container-fluid">
       <ul className="nav navbar-nav">
 
@@ -24,35 +25,35 @@ export default function Navbar() {
         <li>
           <Link to="/Game">
             <font size="5.2">
-              <font color="orange">🎮 Game</font>
+              <font color="gray">🎮 Game</font>
             </font>
           </Link>
         </li>
         <li>
           <Link to="/Watch">
             <font size="5.2">
-              <font color="yellow">🎥 Watch</font>
+              <font color="gray">🎥 Watch</font>
             </font>
           </Link>
         </li>
         <li>
           <Link to="/SocialMedia">
             <font size="5.2">
-              <font color="green">📋 SocialMedia</font>
+              <font color="gray">📋 SocialMedia</font>
             </font>
           </Link>
         </li>
         <li>
           <Link to="/AboutME">
             <font size="5.2">
-              <font color="skyblue">ℹ️ AboutME</font>
+              <font color="gray">ℹ️ AboutME</font>
             </font>
           </Link>
         </li>
         <li>
           <Link to="/Pictures">
             <font size="5.2">
-              <font color="purple">🎨 Pictures</font>
+              <font color="gray">🎨 Pictures</font>
             </font>
           </Link>
         </li>
