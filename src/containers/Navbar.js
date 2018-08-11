@@ -9,7 +9,7 @@ export default function Navbar() {
           background: `url(${image_5})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          height: '30rem'
+          height: '17rem'
         }}
       />
       <ul className="nav navbar-nav">
