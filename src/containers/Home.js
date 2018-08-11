@@ -12,22 +12,24 @@ export default class Home extends Component {
     loginPasswordInput: '',
     signUpUsernameInput: '',
     signUpPasswordInput: '',
-    signUpPasswordConfirm: ''
+    signUpPasswordConfirm: '',
+    messageInput: '',
+    messages: []
   };
 
   async componentDidMount() {
     const token = localStorage.getItem('token');
     if (token) {
       try {
-        const { data: { userId, username } } = await request.get(
-          `${URL}/users/session`,
-          {
-            headers: {
-              authorization: token
-            }
+        const {
+          data: { userId, username }
+        } = await request.get(`${URL}/users/session`, {
+          headers: {
+            authorization: token
           }
-        );
-        this.setState({ userId, username });
+        });
+        const { data: messages } = await request.get(`${URL}/posts`);
+        this.setState({ userId, username, messages });
       } catch (error) {
         console.error(error);
       }
@@ -37,9 +39,11 @@ export default class Home extends Component {
   render() {
     const {
       modalShown,
+      messages,
       username,
       loginUsernameInput,
       loginPasswordInput,
+      messageInput,
       signUpUsernameInput,
       signUpPasswordInput,
       signUpPasswordConfirm
@@ -142,9 +146,10 @@ export default class Home extends Component {
             `}
             >
               <span style={{ color: 'black' }}>
-              
                 <font color="sky blue">
-                  <font size="6">Welcome To Jinny's Website</font>
+                  <font size="6">
+                    Welcome <font color="pink">To Jinny's Website</font>
+                  </font>
                 </font>
               </span>
             </div>
@@ -153,14 +158,12 @@ export default class Home extends Component {
         <section>
           <a href="https://www.youtube.com/channel/UCFckiz3s8f4GTG8v11lk1cA">
             <img
-              src="https://media.discordapp.net/attachments/457862097104273409/476376447305383956/2018-08-02_12.17.09.png?width=2160&height=1075"
+              src="https://media.discordapp.net/attachments/383855767402577920/440109000282079233/gekpiintro.png"
               style={{
-                width: "500px",
-                height: '250px'
+                width: '400px'
               }}
             />
           </a>
-          
         </section>
         <section
           className={css`
@@ -175,13 +178,14 @@ export default class Home extends Component {
           `}
         >
           <div>
-             <p>
+            <font size="4">⬆ This guy is my mascotte, Gekpi</font>
+            <p>
               - Made by{' '}
               <font size="5">
                 <em>Mikey</em>. and <em>Jinny</em>
               </font>
             </p>
-            
+
             <p>
               <font size="6">
                 Hi guys I'm just an ordinary 6-grade kid who really likes
@@ -192,16 +196,40 @@ export default class Home extends Component {
             </p>
           </div>
         </section>
-        
-        
-        {username && (
-          <div style={{ marginTop: '1rem' }}>
-            <p>Hello {username}!!</p>
-            <button className="btn btn-default" onClick={this.onLogOut}>
-             Log Out
-            </button>
-          </div>
-        )}
+        <div style={{ paddingBottom: '3rem' }}>
+          {username && (
+            <div style={{ marginTop: '1rem' }}>
+              <p>Hello {username}!!</p>
+              <div>
+                <input
+                  placeholder="Write a message!"
+                  onChange={e =>
+                    this.setState({ messageInput: e.target.value })
+                  }
+                  onKeyUp={event => {
+                    if (event.key === 'Enter') {
+                      this.onSubmitMessage();
+                    }
+                  }}
+                  value={messageInput}
+                />
+              </div>
+              <button
+                style={{ marginTop: '1rem' }}
+                className="btn btn-default"
+                onClick={this.onLogOut}
+              >
+                Log Out
+              </button>
+            </div>
+          )}
+          {messages.map(msg => (
+            <div key={msg.id}>
+              {msg.content}{' '}
+              <button onClick={() => this.onDelete(msg.id)}>delete</button>
+            </div>
+          ))}
+        </div>
         {!username && (
           <div
             className={css`
@@ -287,16 +315,22 @@ export default class Home extends Component {
     );
   }
 
+  onDelete = async postId => {
+    await request.delete(`${URL}/posts?id=${postId}`);
+    this.setState(state => ({
+      messages: state.messages.filter(msg => msg.id !== postId)
+    }));
+  };
+
   onSignUp = async () => {
     const { signUpUsernameInput, signUpPasswordInput } = this.state;
     try {
-      const { data: { alreadyExists, token, userId } } = await request.post(
-        `${URL}/users`,
-        {
-          username: signUpUsernameInput,
-          password: signUpPasswordInput
-        }
-      );
+      const {
+        data: { alreadyExists, token, userId }
+      } = await request.post(`${URL}/users`, {
+        username: signUpUsernameInput,
+        password: signUpPasswordInput
+      });
       if (alreadyExists) return alert('User already exists');
       localStorage.setItem('token', token);
       this.setState({
@@ -311,7 +345,9 @@ export default class Home extends Component {
   onLogIn = async () => {
     const { loginUsernameInput, loginPasswordInput } = this.state;
     try {
-      const { data: { token, userId } } = await request.get(
+      const {
+        data: { token, userId }
+      } = await request.get(
         `${URL}/users?username=${loginUsernameInput}&password=${loginPasswordInput}`
       );
       localStorage.setItem('token', token);
@@ -330,6 +366,15 @@ export default class Home extends Component {
       userId: undefined,
       username: ''
     });
+  };
+
+  onSubmitMessage = async () => {
+    const { messageInput } = this.state;
+    const { data } = await request.post(`${URL}/posts`, { post: messageInput });
+    this.setState(state => ({
+      messageInput: '',
+      messages: state.messages.concat(data)
+    }));
   };
 
   loginButtonDisabled = () => {
