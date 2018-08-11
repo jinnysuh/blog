@@ -153,10 +153,10 @@ export default class Home extends Component {
         <section>
           <a href="https://www.youtube.com/channel/UCFckiz3s8f4GTG8v11lk1cA">
             <img
-              src="https://cdn.discordapp.com/attachments/444739722388963329/474381568383647754/Jinnydolly.jpg"
+              src="https://media.discordapp.net/attachments/457862097104273409/476376447305383956/2018-08-02_12.17.09.png?width=2160&height=1075"
               style={{
-                width: "600px",
-                height: '200px'
+                width: "500px",
+                height: '250px'
               }}
             />
           </a>

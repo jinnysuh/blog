@@ -8,7 +8,7 @@ export default function Home() {
       <Video videoCode="Q1JEWV5esDo"/>
        <h2><strong><font color="cyan">MY INTRO!</font></strong></h2>
        <Video videoCode="0nRNeHLN85o"/>
-       <Video videoCode="Q9t898T6piY"/>
+       <Video videoCode="ZeEo65V327I"/>
        <Video videoCode="kfYSa_sO9KM"/>
       <p> © Copyright Jinny2006 All Rights Reserved.</p>
     </div>
