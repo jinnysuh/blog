@@ -16,7 +16,7 @@ export default function Navbar() {
         <li>
           <Link to="/">
             <font size="5.2">
-              <font color="gray">🏠 Home</font>
+              <font color="skyblue">Jinny's</font><font color="pink"> Blog</font>
             </font>
           </Link>
         </li>
@@ -26,35 +26,45 @@ export default function Navbar() {
         <li>
           <Link to="/Game">
             <font size="5.2">
-              <font color="gray">🎮 Game</font>
+              <font color="gray"><img src="https://image.flaticon.com/icons/svg/181/181515.svg"
+                height="30"
+              /> Game</font>
             </font>
           </Link>
         </li>
         <li>
           <Link to="/Watch">
             <font size="5.2">
-              <font color="gray">🎥 Watch</font>
+              <font color="gray"><img src="https://image.flaticon.com/icons/svg/185/185983.svg"
+               height ="30"
+              /> Watch</font>
             </font>
           </Link>
         </li>
         <li>
           <Link to="/SocialMedia">
             <font size="5.2">
-              <font color="gray">📋 SocialMedia</font>
+              <font color="gray"><img src="https://image.flaticon.com/icons/svg/148/148800.svg"
+                height="30"
+              /> SocialMedia</font>
             </font>
           </Link>
         </li>
         <li>
           <Link to="/AboutME">
             <font size="5.2">
-              <font color="gray">ℹ️ AboutME</font>
+              <font color="gray"><img src="https://image.flaticon.com/icons/svg/189/189665.svg"
+                height="30"
+              />AboutME</font>
             </font>
           </Link>
         </li>
         <li>
           <Link to="/Pictures">
             <font size="5.2">
-              <font color="gray">🎨 Pictures</font>
+              <font color="gray"><img src="https://image.flaticon.com/icons/svg/148/148711.svg"
+                height="30"
+              /> Pictures</font>
             </font>
           </Link>
         </li>

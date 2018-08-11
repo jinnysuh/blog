@@ -196,6 +196,7 @@ export default class Home extends Component {
             </p>
           </div>
         </section>
+       
         <div style={{ paddingBottom: '3rem' }}>
           {username && (
             <div style={{ marginTop: '1rem' }}>
@@ -312,6 +313,7 @@ export default class Home extends Component {
           </div>
         )}
       </div>
+
     );
   }
 
