@@ -16,7 +16,7 @@ export default function FirstPage() {
       <Video videoCode="vEy6tcU6eLU" />
       <Video videoCode="r0JjEK_eKSo" />
       <Video videoCode="v3_EezKE0WI" />
-      <p> © Copyright Geography Now All rights belongs to Geography Now</p>
+      <p> © Copyright Geography Now. All rights belongs to Geography Now</p>
     </div>
   );
 }
