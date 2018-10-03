@@ -1,24 +1,24 @@
-import React, { Component } from 'react';
-import Video from '../components/Video';
-import { css } from 'emotion';
-import URL from '../constants/URL';
-import request from 'axios';
+import React, { Component } from "react";
+import Video from "../components/Video";
+import { css } from "emotion";
+import URL from "../constants/URL";
+import request from "axios";
 
 export default class Home extends Component {
   state = {
     userId: undefined,
-    username: '',
-    loginUsernameInput: '',
-    loginPasswordInput: '',
-    signUpUsernameInput: '',
-    signUpPasswordInput: '',
-    signUpPasswordConfirm: '',
-    messageInput: '',
+    username: "",
+    loginUsernameInput: "",
+    loginPasswordInput: "",
+    signUpUsernameInput: "",
+    signUpPasswordInput: "",
+    signUpPasswordConfirm: "",
+    messageInput: "",
     messages: []
   };
 
   async componentDidMount() {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
     if (token) {
       try {
         const {
@@ -38,7 +38,6 @@ export default class Home extends Component {
 
   render() {
     const {
-      modalShown,
       messages,
       username,
       loginUsernameInput,
@@ -51,24 +50,24 @@ export default class Home extends Component {
     return (
       <div
         style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center'
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center"
         }}
       >
         <div
           className="App-intro"
           style={{
-            width: '100%',
-            height: '5rem',
-            display: 'flex',
-            justifyContent: 'center'
+            width: "100%",
+            height: "5rem",
+            display: "flex",
+            justifyContent: "center"
           }}
         >
           <div
             style={{
-              position: 'relative',
-              width: '50%'
+              position: "relative",
+              width: "50%"
             }}
           >
             <div
@@ -145,7 +144,7 @@ export default class Home extends Component {
               }
             `}
             >
-              <span style={{ color: 'black' }}>
+              <span style={{ color: "black" }}>
                 <font color="sky blue">
                   <font size="6">
                     Welcome <font color="pink">To Jinny's Website</font>
@@ -158,9 +157,10 @@ export default class Home extends Component {
         <section>
           <a href="https://www.youtube.com/channel/UCFckiz3s8f4GTG8v11lk1cA">
             <img
-              src="https://media.discordapp.net/attachments/383855767402577920/440109000282079233/gekpiintro.png"
+              alt=""
+              src="https://cdn.discordapp.com/attachments/444739722388963329/480891447290232832/2_0.jpg"
               style={{
-                width: '400px'
+                width: "500px"
               }}
             />
           </a>
@@ -178,29 +178,21 @@ export default class Home extends Component {
           `}
         >
           <div>
-            <font size="4">⬆ This guy is my mascotte, Gekpi</font>
-            <p>
-              - Made by{' '}
-              <font size="5">
-                <em>Mikey</em>. and <em>Jinny</em>
-              </font>
-            </p>
-
-            <p>
-              <font size="6">
-                Hi guys I'm just an ordinary 6-grade kid who really likes
-                programming and science. I like to read books or play minecraft
-                at free times. Subscribe to my <font color="red">YOU</font>TUBE
-                channel!
-              </font>
-            </p>
+            <font size="6">
+              <font color="skyblue">Updates</font>
+            </font>
+            <p>Recent Video</p>
+            <Video videoCode="0nRNeHLN85o" />
           </div>
         </section>
-       
-        <div style={{ paddingBottom: '3rem' }}>
+
+        <div style={{ paddingBottom: "3rem" }}>
           {username && (
-            <div style={{ marginTop: '1rem' }}>
-              <p>Hello {username}!!</p>
+            <div style={{ marginTop: "1rem" }}>
+              <p>
+                Hello {username}
+                !!
+              </p>
               <div>
                 <input
                   placeholder="Write a message!"
@@ -208,7 +200,7 @@ export default class Home extends Component {
                     this.setState({ messageInput: e.target.value })
                   }
                   onKeyUp={event => {
-                    if (event.key === 'Enter') {
+                    if (event.key === "Enter") {
                       this.onSubmitMessage();
                     }
                   }}
@@ -216,7 +208,7 @@ export default class Home extends Component {
                 />
               </div>
               <button
-                style={{ marginTop: '1rem' }}
+                style={{ marginTop: "1rem" }}
                 className="btn btn-default"
                 onClick={this.onLogOut}
               >
@@ -226,7 +218,7 @@ export default class Home extends Component {
           )}
           {messages.map(msg => (
             <div key={msg.id}>
-              {msg.content}{' '}
+              {msg.content}{" "}
               <button onClick={() => this.onDelete(msg.id)}>delete</button>
             </div>
           ))}
@@ -262,7 +254,7 @@ export default class Home extends Component {
               />
               <button
                 className="btn btn-default"
-                style={{ marginTop: '1rem' }}
+                style={{ marginTop: "1rem" }}
                 onClick={this.onLogIn}
                 disabled={this.loginButtonDisabled()}
               >
@@ -303,7 +295,7 @@ export default class Home extends Component {
               />
               <button
                 className="btn btn-default"
-                style={{ marginTop: '1rem' }}
+                style={{ marginTop: "1rem" }}
                 onClick={this.onSignUp}
                 disabled={this.signUpButtonDisabled()}
               >
@@ -313,7 +305,6 @@ export default class Home extends Component {
           </div>
         )}
       </div>
-
     );
   }
 
@@ -333,8 +324,8 @@ export default class Home extends Component {
         username: signUpUsernameInput,
         password: signUpPasswordInput
       });
-      if (alreadyExists) return alert('User already exists');
-      localStorage.setItem('token', token);
+      if (alreadyExists) return alert("User already exists");
+      localStorage.setItem("token", token);
       this.setState({
         userId,
         username: signUpUsernameInput
@@ -352,7 +343,7 @@ export default class Home extends Component {
       } = await request.get(
         `${URL}/users?username=${loginUsernameInput}&password=${loginPasswordInput}`
       );
-      localStorage.setItem('token', token);
+      localStorage.setItem("token", token);
       this.setState({
         userId,
         username: loginUsernameInput
@@ -363,10 +354,10 @@ export default class Home extends Component {
   };
 
   onLogOut = async () => {
-    localStorage.removeItem('token');
+    localStorage.removeItem("token");
     this.setState({
       userId: undefined,
-      username: ''
+      username: ""
     });
   };
 
@@ -374,7 +365,7 @@ export default class Home extends Component {
     const { messageInput } = this.state;
     const { data } = await request.post(`${URL}/posts`, { post: messageInput });
     this.setState(state => ({
-      messageInput: '',
+      messageInput: "",
       messages: state.messages.concat(data)
     }));
   };

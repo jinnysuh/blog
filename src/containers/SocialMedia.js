@@ -1,29 +1,32 @@
 import React from "react";
-import { css } from 'emotion';
+import { css } from "emotion";
 
 export default function Minecraft() {
   return (
     <div>
       <h2>
-        <img src="https://res.cloudinary.com/teepublic/image/private/s--gfsWHvaH--/t_Preview/b_rgb:262c3a,c_limit,f_jpg,h_630,q_90,w_630/v1493209189/production/designs/1524888_1.jpg" />
+        <img
+          alt=""
+          src="https://res.cloudinary.com/teepublic/image/private/s--gfsWHvaH--/t_Preview/b_rgb:262c3a,c_limit,f_jpg,h_630,q_90,w_630/v1493209189/production/designs/1524888_1.jpg"
+        />
       </h2>
       <div
-          className="App-intro"
+        className="App-intro"
+        style={{
+          width: "100%",
+          height: "5rem",
+          display: "flex",
+          justifyContent: "center"
+        }}
+      >
+        <div
           style={{
-            width: '100%',
-            height: '5rem',
-            display: 'flex',
-            justifyContent: 'center'
+            position: "relative",
+            width: "50%"
           }}
         >
           <div
-            style={{
-              position: 'relative',
-              width: '50%'
-            }}
-          >
-            <div
-              className={css`
+            className={css`
                 font-size: 2rem;
                 text-align: center;
                 font-weight: bold;
@@ -95,15 +98,15 @@ export default function Minecraft() {
                 }
               }
             `}
-            >
-              <span style={{ color: 'cyan' }}>👇🏻 👇🏻 Information down below 👇🏻 👇🏻</span>
-            </div>
+          >
+            <span style={{ color: "cyan" }}>Information down below </span>
           </div>
         </div>
+      </div>
 
-  
       <a href="https://www.youtube.com/channel/UCFckiz3s8f4GTG8v11lk1cA/videos">
         <img
+          alt=""
           src="https://d1cm41cmeatikf.cloudfront.net/web/corp/images/YouTube_iOS_App_Logo_2015.png"
           style={{
             width: "200px"
@@ -114,6 +117,7 @@ export default function Minecraft() {
 
       <a href="https://www.twin-kle.com/users/jinny">
         <img
+          alt=""
           src="https://upload.wikimedia.org/wikipedia/commons/4/42/Blue_square_T.PNG"
           width="150px"
         />
@@ -125,6 +129,7 @@ export default function Minecraft() {
       </a>
       <a href="https://hypixel.net/members/jinny2006.1737598/">
         <img
+          alt=""
           src="https://pbs.twimg.com/profile_images/892182725960105986/mUnwMuh3.jpg"
           width="150px"
         />
