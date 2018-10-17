@@ -8,11 +8,19 @@
     "cors": "^2.8.4",
     "emotion": "^9.0.2",
     "emotions": "^0.0.1",
+    "eslint": "^5.7.0",
+    "eslint-config-4catalyzer-react": "^0.4.4",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-flowtype": "^3.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-standard": "^4.0.0",
     "express": "^4.16.3",
     "http": "^0.0.0",
     "jwt-simple": "^0.5.1",
-    "mobx": "^3.3.0",
-    "mobx-react": "^4.3.3",
+    "mobx": "^5.5.0",
+    "mobx-react": "^5.3.1",
     "morgan": "^1.9.0",
     "mysql": "^2.15.0",
     "passport": "^0.4.0",
@@ -20,12 +28,13 @@
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "password-hash": "^1.2.2",
+    "prop-types": "^15.6.2",
     "pseudomap": "^1.0.2",
-    "react": "^15.6.1",
-    "react-bootstrap": "^0.31.1",
-    "react-dom": "^15.6.1",
+    "react": "^16.5.2",
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "^16.5.2",
     "react-router-dom": "^4.1.2",
-    "react-scripts": "1.0.10"
+    "react-scripts": "2.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -37,5 +46,11 @@
     "server-api": "sudo forever -o api_out.log -e api_err.log start api/index.js",
     "stop-server": "sudo forever stop index.js",
     "stop-api-server": "sudo forever stop api/index.js"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
