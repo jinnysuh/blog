@@ -1,5 +1,9 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
+Video.propTypes = {
+  videoCode: PropTypes.string
+};
 export default function Video({ videoCode }) {
   return (
     <iframe

@@ -1,5 +1,5 @@
-import React from "react";
-import { css } from "emotion";
+import React from 'react';
+import { css } from 'emotion';
 export default function AboutMe() {
   return (
     <div
@@ -12,7 +12,7 @@ export default function AboutMe() {
       </h1>
       <section>
         <h1>
-          {" "}
+          {' '}
           <font color="orange">My Hobbies</font>
         </h1>
         <p>
@@ -21,7 +21,7 @@ export default function AboutMe() {
           </font>
         </p>
         <h2>
-          {" "}
+          {' '}
           <font color="gray"> My Favorite Things</font>
         </h2>
         <p>
@@ -56,7 +56,7 @@ export default function AboutMe() {
         </p>
         <p>
           <font size="5">
-            Also, I am good at making <font color="brown">chocolate</font>{" "}
+            Also, I am good at making <font color="brown">chocolate</font>{' '}
             muffins.
           </font>
         </p>
@@ -78,21 +78,21 @@ export default function AboutMe() {
             src="/minecraft_island.png"
             alt=""
             style={{
-              width: "250px"
+              width: '250px'
             }}
           />
           <img
             alt=""
             src="/black_panther.png"
             style={{
-              width: "250px"
+              width: '250px'
             }}
           />
           <img
             alt=""
             src="/magnus_chase.png"
             style={{
-              width: "500px"
+              width: '500px'
             }}
           />
         </div>

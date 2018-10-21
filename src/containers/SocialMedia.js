@@ -1,5 +1,5 @@
-import React from "react";
-import { css } from "emotion";
+import React from 'react';
+import { css } from 'emotion';
 
 export default function Minecraft() {
   return (
@@ -13,16 +13,16 @@ export default function Minecraft() {
       <div
         className="App-intro"
         style={{
-          width: "100%",
-          height: "5rem",
-          display: "flex",
-          justifyContent: "center"
+          width: '100%',
+          height: '5rem',
+          display: 'flex',
+          justifyContent: 'center'
         }}
       >
         <div
           style={{
-            position: "relative",
-            width: "50%"
+            position: 'relative',
+            width: '50%'
           }}
         >
           <div
@@ -99,7 +99,7 @@ export default function Minecraft() {
               }
             `}
           >
-            <span style={{ color: "cyan" }}>Information down below </span>
+            <span style={{ color: 'cyan' }}>Information down below </span>
           </div>
         </div>
       </div>
@@ -109,7 +109,7 @@ export default function Minecraft() {
           alt=""
           src="https://d1cm41cmeatikf.cloudfront.net/web/corp/images/YouTube_iOS_App_Logo_2015.png"
           style={{
-            width: "200px"
+            width: '200px'
           }}
         />
         <p>Youtube</p>
@@ -124,8 +124,8 @@ export default function Minecraft() {
         <p>Twinkle</p>
       </a>
       <a href="https://youtu.be/xRMxeqReX8A">
-        {" "}
-        <p>click here to learn how to use twinkle website!</p>{" "}
+        {' '}
+        <p>click here to learn how to use twinkle website!</p>{' '}
       </a>
       <a href="https://hypixel.net/members/jinny2006.1737598/">
         <img

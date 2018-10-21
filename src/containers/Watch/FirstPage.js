@@ -1,5 +1,5 @@
-import React from "react";
-import Video from "../../components/Video";
+import React from 'react';
+import Video from '../../components/Video';
 export default function FirstPage() {
   return (
     <div>

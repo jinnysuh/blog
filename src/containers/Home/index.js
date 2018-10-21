@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Video from '../components/Video';
+import Video from '../../components/Video';
 import { css } from 'emotion';
-import URL from '../constants/URL';
+import URL from '../../constants/URL';
 import request from 'axios';
+import Dolly from './Dolly';
 
 export default class Home extends Component {
   state = {
@@ -154,17 +155,7 @@ export default class Home extends Component {
             </div>
           </div>
         </div>
-        <section>
-          <a href="https://www.youtube.com/channel/UCFckiz3s8f4GTG8v11lk1cA">
-            <img
-              alt=""
-              src="https://cdn.discordapp.com/attachments/444739722388963329/480891447290232832/2_0.jpg"
-              style={{
-                width: '500px'
-              }}
-            />
-          </a>
-        </section>
+        <Dolly />
         <section
           className={css`
             background: white;
@@ -185,7 +176,6 @@ export default class Home extends Component {
             <Video videoCode="0nRNeHLN85o" />
           </div>
         </section>
-
         <div style={{ paddingBottom: '3rem' }}>
           {username && (
             <div style={{ marginTop: '1rem' }}>
