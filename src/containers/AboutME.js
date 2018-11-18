@@ -13,7 +13,7 @@ export default function AboutMe() {
       <section>
         <h1>
           {' '}
-          <font color="orange">My Hobbies</font>
+          <font color="black">My Hobbies</font>
         </h1>
         <p>
           <font size="5">
@@ -26,38 +26,29 @@ export default function AboutMe() {
         </h2>
         <p>
           <font size="5">
-            My favorite food: <font color="orange">Pizza</font>
+            My favorite food: <font color="black" />
+            Pizza
           </font>
         </p>
         <p>
           <font size="5">
-            My favorite book: <font color="purple">Magnus Chase </font>
+            My favorite book: <font color="gray">Magnus Chase </font>
           </font>
         </p>
         <p>
           <font size="5">
-            My favorite game: <font color="green">Minecraft</font>
+            My favorite game: Mine
+            <font color="black">craft</font>
           </font>
         </p>
-        <p>
-          <font size="5">
-            My favorite Super Hero: <font color="red">Spiderman</font> & Black
-            Panther
-          </font>
-        </p>
+
         <h3>
-          <font color="pink">My Specialty</font>
+          <font color="purple">My Specialty</font>
         </h3>
         <p>
           <font size="5">
             I love to <font color="sky blue">Ski</font> and I use to go to
             Gonjiam Resort.
-          </font>
-        </p>
-        <p>
-          <font size="5">
-            Also, I am good at making <font color="brown">chocolate</font>{' '}
-            muffins.
           </font>
         </p>
       </section>
@@ -78,21 +69,7 @@ export default function AboutMe() {
             src="/minecraft_island.png"
             alt=""
             style={{
-              width: '250px'
-            }}
-          />
-          <img
-            alt=""
-            src="/black_panther.png"
-            style={{
-              width: '250px'
-            }}
-          />
-          <img
-            alt=""
-            src="/magnus_chase.png"
-            style={{
-              width: '500px'
+              width: '370px'
             }}
           />
         </div>

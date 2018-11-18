@@ -146,9 +146,9 @@ export default class Home extends Component {
             `}
             >
               <span style={{ color: 'black' }}>
-                <font color="sky blue">
+                <font color="black">
                   <font size="6">
-                    Welcome <font color="pink">{`To Jinny's Website`}</font>
+                    Welcome <font color="gray">{`To Jinny's Website`}</font>
                   </font>
                 </font>
               </span>

@@ -5,13 +5,13 @@ export default function Home() {
   return (
     <div>
       <h1>
-        <font color="red">Pivot animations</font>
-        <font color="orange"> By </font> <font color="green">Me!</font>
+        <font color="Black">Pivot animations</font>
+        <font color="gray"> By </font> <font color="gray">Me!</font>
       </h1>
       <Video videoCode="Q1JEWV5esDo" />
       <h2>
         <strong>
-          <font color="cyan">MY INTRO!</font>
+          <font color="purple">MY INTRO!</font>
         </strong>
       </h2>
       <Video videoCode="0nRNeHLN85o" />

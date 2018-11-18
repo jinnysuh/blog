@@ -99,7 +99,7 @@ export default function Minecraft() {
               }
             `}
           >
-            <span style={{ color: 'cyan' }}>Information down below </span>
+            <span style={{ color: 'black' }}>Information down below </span>
           </div>
         </div>
       </div>

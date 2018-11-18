@@ -1,24 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import image5 from '../img/image5.png';
+import background from '../img/background.png';
 export default function Navbar() {
   return (
     <div className="container-fluid">
       <div
         style={{
-          background: `url(${image5})`,
+          background: `url(${background})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'center top',
           height: '17rem'
         }}
       />
       <ul className="nav navbar-nav">
         <li>
           <Link to="/">
-            <font size="5.2">
-              <font color="skyblue">{`Jinny's`}</font>
-              <font color="pink"> Blog</font>
-            </font>
+            <div
+              style={{
+                fontSize: '2.5rem',
+                textAlign: 'center',
+                color: '#6897BB'
+              }}
+            >
+              <span style={{ color: 'black' }}>{`Jinny's`}</span>{' '}
+              <span style={{ color: 'gray' }}>{`Blog`}</span>
+            </div>
           </Link>
         </li>
       </ul>
@@ -26,58 +32,82 @@ export default function Navbar() {
       <ul className="nav navbar-nav">
         <li>
           <Link to="/Watch">
-            <font size="5.2">
-              <font color="gray">
+            <div
+              style={{
+                fontSize: '2rem',
+                textAlign: 'center',
+                color: '#4f545c'
+              }}
+            >
+              <div>
                 <img
                   alt=""
-                  src="https://image.flaticon.com/icons/svg/185/185983.svg"
+                  src="https://image.flaticon.com/icons/svg/109/109700.svg"
                   height="30"
                 />{' '}
                 Watch
-              </font>
-            </font>
+              </div>
+            </div>
           </Link>
         </li>
         <li>
           <Link to="/SocialMedia">
-            <font size="5.2">
-              <font color="gray">
+            <div
+              style={{
+                fontSize: '2rem',
+                textAlign: 'center',
+                color: '#4f545c'
+              }}
+            >
+              <div>
                 <img
                   alt=""
-                  src="https://image.flaticon.com/icons/svg/148/148800.svg"
+                  src="https://image.flaticon.com/icons/svg/149/149447.svg"
                   height="30"
                 />{' '}
                 SocialMedia
-              </font>
-            </font>
+              </div>
+            </div>
           </Link>
         </li>
         <li>
           <Link to="/AboutME">
-            <font size="5.2">
-              <font color="gray">
+            <div
+              style={{
+                fontSize: '2rem',
+                textAlign: 'center',
+                color: '#4f545c'
+              }}
+            >
+              <div>
                 <img
                   alt=""
-                  src="https://image.flaticon.com/icons/svg/189/189665.svg"
+                  src="https://image.flaticon.com/icons/svg/149/149150.svg"
                   height="30"
                 />
                 AboutME
-              </font>
-            </font>
+              </div>
+            </div>
           </Link>
         </li>
         <li>
           <Link to="/Pictures">
-            <font size="5.2">
-              <font color="gray">
+            <div
+              style={{
+                fontSize: '2rem',
+                textAlign: 'center',
+                color: '#4f545c'
+              }}
+            >
+              <div>
                 <img
                   alt=""
-                  src="https://image.flaticon.com/icons/svg/148/148711.svg"
+                  src="https://image.flaticon.com/icons/svg/149/149092.svg"
                   height="30"
                 />{' '}
                 Pictures
-              </font>
-            </font>
+              </div>
+            </div>
           </Link>
         </li>
       </ul>
