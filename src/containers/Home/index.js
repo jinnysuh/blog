@@ -177,12 +177,9 @@ export default class Home extends Component {
           </div>
         </section>
         <div style={{ paddingBottom: '3rem' }}>
-          {username && (
+          {true && (
             <div style={{ marginTop: '1rem' }}>
-              <p>
-                Hello {username}
-                !!
-              </p>
+              <p>Hello {username}</p>
               <div>
                 <input
                   placeholder="Write a message!"
@@ -206,12 +203,15 @@ export default class Home extends Component {
               </button>
             </div>
           )}
-          {messages.map(msg => (
-            <div key={msg.id}>
-              {msg.content}{' '}
-              <button onClick={() => this.onDelete(msg.id)}>delete</button>
-            </div>
-          ))}
+          {messages.map(msg => {
+            console.log(msg);
+            return (
+              <div key={msg.id}>
+                {msg.content}{' '}
+                <button onClick={() => this.onDelete(msg.id)}>delete</button>
+              </div>
+            );
+          })}
         </div>
         {!username && (
           <div
@@ -251,6 +251,7 @@ export default class Home extends Component {
                 Sign In
               </button>
             </section>
+
             <section
               className={css`
                 display: flex;
