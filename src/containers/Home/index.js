@@ -20,8 +20,8 @@ export default class Home extends Component {
 
   async componentDidMount() {
     const token = localStorage.getItem('token');
-    if (token) {
-      try {
+    try {
+      if (token) {
         const {
           data: { userId, username }
         } = await request.get(`${URL}/users/session`, {
@@ -29,11 +29,12 @@ export default class Home extends Component {
             authorization: token
           }
         });
-        const { data: messages } = await request.get(`${URL}/posts`);
-        this.setState({ userId, username, messages });
-      } catch (error) {
-        console.error(error);
+        this.setState({ userId, username });
       }
+      const { data: messages } = await request.get(`${URL}/posts`);
+      this.setState({ messages });
+    } catch (error) {
+      console.error(error);
     }
   }
 
@@ -177,7 +178,7 @@ export default class Home extends Component {
           </div>
         </section>
         <div style={{ paddingBottom: '3rem' }}>
-          {true && (
+          {username && (
             <div style={{ marginTop: '1rem' }}>
               <p>Hello {username}</p>
               <div>
@@ -203,15 +204,6 @@ export default class Home extends Component {
               </button>
             </div>
           )}
-          {messages.map(msg => {
-            console.log(msg);
-            return (
-              <div key={msg.id}>
-                {msg.content}{' '}
-                <button onClick={() => this.onDelete(msg.id)}>delete</button>
-              </div>
-            );
-          })}
         </div>
         {!username && (
           <div
@@ -295,6 +287,20 @@ export default class Home extends Component {
             </section>
           </div>
         )}
+        <f1>
+          <font size="5">
+            <font color="orange">Messages!</font>
+          </font>
+        </f1>
+        <p>-Log in to type in messages-</p>
+        {messages.map(msg => {
+          return (
+            <div key={msg.id}>
+              {msg.content}{' '}
+              <button onClick={() => this.onDelete(msg.id)}>delete</button>
+            </div>
+          );
+        })}
       </div>
     );
   }
