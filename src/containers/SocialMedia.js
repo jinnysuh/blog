@@ -99,7 +99,7 @@ export default function Minecraft() {
               }
             `}
           >
-            <span style={{ color: 'black' }}>Information down below </span>
+            <span style={{ color: 'black' }}>Information down below</span>
           </div>
         </div>
       </div>
@@ -135,7 +135,7 @@ export default function Minecraft() {
         />
         <p>Hypixel</p>
       </a>
-      <p>Discord : https://discord.gg/5DsQab *Join my server!*</p>
+      <p>Discord : https://discord.gg/5DsQab </p>
     </div>
   );
 }
