@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class Dolly extends Component {
   render() {
     return (
-      <section>
+      <section style={{ width: '100%' }}>
         <a href="https://www.youtube.com/channel/UCFckiz3s8f4GTG8v11lk1cA">
           <img
             alt=""

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import Video from '../../components/Video';
 import { css } from 'emotion';
 import URL from '../../constants/URL';
 import request from 'axios';
 import Dolly from './Dolly';
+import Messages from './Messages';
+import Updates from './Updates';
 
 export default class Home extends Component {
   state = {
@@ -156,26 +157,7 @@ export default class Home extends Component {
           </div>
         </div>
         <Dolly />
-        <section
-          className={css`
-            background: white;
-            width: 30%;
-            margin-left: 1rem;
-            display: flex;
-            color: black;
-            align-items: left;
-            justify-content: left;
-            margin-right: 1rem;
-          `}
-        >
-          <div>
-            <font size="6">
-              <font color="skyblue">Updates</font>
-            </font>
-            <p>Recent Video</p>
-            <Video videoCode="0nRNeHLN85o" />
-          </div>
-        </section>
+        <Updates />
         <div style={{ paddingBottom: '3rem' }}>
           {username && (
             <div style={{ marginTop: '1rem' }}>
@@ -279,19 +261,7 @@ export default class Home extends Component {
             </section>
           </div>
         )}
-        <f1>
-          <font size="5">
-            <font color="orange">Messages!</font>
-          </font>
-        </f1>
-        {messages.map(msg => {
-          return (
-            <div key={msg.id}>
-              {msg.content}{' '}
-              <button onClick={() => this.onDelete(msg.id)}>delete</button>
-            </div>
-          );
-        })}
+        <Messages messages={messages} />
       </div>
     );
   }
