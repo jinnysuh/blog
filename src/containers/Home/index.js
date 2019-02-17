@@ -17,7 +17,6 @@ export default class Home extends Component {
     messageInput: '',
     messages: []
   };
-
   async componentDidMount() {
     const token = localStorage.getItem('token');
     try {
@@ -195,13 +194,6 @@ export default class Home extends Component {
                   value={messageInput}
                 />
               </div>
-              <button
-                style={{ marginTop: '1rem' }}
-                className="btn btn-default"
-                onClick={this.onLogOut}
-              >
-                Log Out
-              </button>
             </div>
           )}
         </div>
@@ -292,7 +284,6 @@ export default class Home extends Component {
             <font color="orange">Messages!</font>
           </font>
         </f1>
-        <p>-Log in to type in messages-</p>
         {messages.map(msg => {
           return (
             <div key={msg.id}>
@@ -348,14 +339,6 @@ export default class Home extends Component {
     } catch (error) {
       console.error(error);
     }
-  };
-
-  onLogOut = async() => {
-    localStorage.removeItem('token');
-    this.setState({
-      userId: undefined,
-      username: ''
-    });
   };
 
   onSubmitMessage = async() => {
