@@ -126,6 +126,11 @@ export default class Navbar extends Component {
                 className="btn btn-default"
                 onClick={this.onLogOut}
               >
+              <img 
+                alt=""
+                src="https://image.flaticon.com/icons/svg/149/149407.svg"
+                height="30"
+                />{' '}
                 Log Out
               </button>
             </li>

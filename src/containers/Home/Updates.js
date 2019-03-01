@@ -16,6 +16,11 @@ export default function Updates() {
         <span
           style={{ color: 'skyblue', fontSize: '3rem', fontWeight: 'bold' }}
         >
+          <img
+            alt=""
+            src="https://image.flaticon.com/icons/svg/813/813322.svg"
+            height="30"
+          />{' '}
           Updates
         </span>
         <p>Recent Video</p>

@@ -192,7 +192,11 @@ export default class Home extends Component {
                 margin-top: 1rem;
               `}
             >
-              <p>Sign In</p>
+              <p><img
+                    alt=""
+                    src="https://image.flaticon.com/icons/svg/131/131973.svg"
+                    height="30"
+              />{' '}Sign In</p>
               <input
                 value={loginUsernameInput}
                 onChange={event =>
@@ -226,7 +230,14 @@ export default class Home extends Component {
                 margin-left: 1rem;
               `}
             >
-              <p>Sign Up</p>
+              <p>
+                <img
+                  alt=""
+                  src="https://image.flaticon.com/icons/svg/25/25284.svg"
+                  height="30"
+                />{' '}
+                Sign Up
+              </p>
               <input
                 value={signUpUsernameInput}
                 onChange={event =>
