@@ -53,8 +53,7 @@ export default class Home extends Component {
       <div
         style={{
           display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center'
+          flexDirection: 'column'
         }}
       >
         <div
@@ -69,7 +68,8 @@ export default class Home extends Component {
           <div
             style={{
               position: 'relative',
-              width: '50%'
+              width: '50%',
+              marginTop: '2rem'
             }}
           >
             <div
@@ -183,6 +183,7 @@ export default class Home extends Component {
           <div
             className={css`
               display: flex;
+              justify-content: center;
             `}
           >
             <section
@@ -192,11 +193,14 @@ export default class Home extends Component {
                 margin-top: 1rem;
               `}
             >
-              <p><img
-                    alt=""
-                    src="https://image.flaticon.com/icons/svg/131/131973.svg"
-                    height="30"
-              />{' '}Sign In</p>
+              <p>
+                <img
+                  alt=""
+                  src="https://image.flaticon.com/icons/svg/131/131973.svg"
+                  height="30"
+                />{' '}
+                Sign In
+              </p>
               <input
                 value={loginUsernameInput}
                 onChange={event =>

@@ -1,135 +1,92 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import background from '../img/background.png';
+import { css } from 'emotion';
 
 export default class Navbar extends Component {
   render() {
     return (
-      <div className="topnav">
-        <div className="container-fluid">
+      <div
+        className={css`
+          background-color: black;
+          overflow: hidden;
+        `}
+      >
+        <div>
           <div
-            style={{
-              background: `url(${background})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center top',
-              height: '17rem'
-            }}
+            className={css`
+              background: url(${background});
+              background-size: cover;
+              background-position: center top;
+              back-position: center top;
+              height: 17rem;
+              @media (max-width: 1024px) {
+                height: 8rem;
+              }
+            `}
           />
-          <ul className="nav navbar-nav">
+          <ul
+            className={css`
+              list-style: none;
+              display: flex;
+              align-items: center;
+              > li {
+                color: #6897bb;
+                display: flex;
+              }
+            `}
+          >
             <li>
               <Link to="/">
-                <div
-                  style={{
-                    fontSize: '2.5rem',
-                    textAlign: 'center',
-                    color: '#6897BB'
-                  }}
-                >
-                  <img
-                    alt=""
-                    src="https://image.flaticon.com/icons/svg/263/263115.svg"
-                    height="30"
-                  />{' '}
-                  <font color="sky blue">Home</font>
-                </div>
+                <img
+                  alt=""
+                  src="https://image.flaticon.com/icons/svg/263/263115.svg"
+                  height="30"
+                />{' '}
+                <span>Home</span>
               </Link>
             </li>
-          </ul>
-
-          <ul className="nav navbar-nav">
             <li>
               <Link to="/Watch">
-                <div
-                  style={{
-                    fontSize: '2rem',
-                    textAlign: 'center',
-                    color: '#4f545c'
-                  }}
-                >
-                  <div>
-                    <img
-                      alt=""
-                      src="https://image.flaticon.com/icons/svg/109/109700.svg"
-                      height="30"
-                    />{' '}
-                    <font color="gray">Watch</font>
-                  </div>
-                </div>
+                <img
+                  alt=""
+                  src="https://image.flaticon.com/icons/svg/109/109700.svg"
+                />{' '}
+                <span>Watch</span>
               </Link>
             </li>
             <li>
               <Link to="/SocialMedia">
-                <div
-                  style={{
-                    fontSize: '2rem',
-                    textAlign: 'center',
-                    color: '#4f545c'
-                  }}
-                >
-                  <div>
-                    <img
-                      alt=""
-                      src="https://image.flaticon.com/icons/svg/149/149447.svg"
-                      height="30"
-                    />{' '}
-                    <font color="gray">SocialMedia</font>
-                  </div>
-                </div>
+                <img
+                  alt=""
+                  src="https://image.flaticon.com/icons/svg/149/149447.svg"
+                />{' '}
+                <span color="gray">SocialMedia</span>
               </Link>
             </li>
             <li>
               <Link to="/AboutME">
-                <div
-                  style={{
-                    fontSize: '2rem',
-                    textAlign: 'center',
-                    color: '#4f545c'
-                  }}
-                >
-                  <div>
-                    <img
-                      alt=""
-                      src="https://image.flaticon.com/icons/svg/149/149150.svg"
-                      height="30"
-                    />
-                    <font color="gray">AboutME</font>
-                  </div>
-                </div>
+                <img
+                  alt=""
+                  src="https://image.flaticon.com/icons/svg/149/149150.svg"
+                />
+                <span color="gray">AboutME</span>
               </Link>
             </li>
             <li>
               <Link to="/Pictures">
-                <div
-                  style={{
-                    fontSize: '2rem',
-                    textAlign: 'center',
-                    color: '#4f545c'
-                  }}
-                >
-                  <div>
-                    <img
-                      alt=""
-                      src="https://image.flaticon.com/icons/svg/149/149092.svg"
-                      height="30"
-                    />{' '}
-                    <font color="gray">Pictures</font>
-                  </div>
-                </div>
+                <img
+                  alt=""
+                  src="https://image.flaticon.com/icons/svg/149/149092.svg"
+                />{' '}
+                <span color="gray">Pictures</span>
               </Link>
             </li>
-          </ul>
-          <ul className="navigation">
             <li>
-              {' '}
-              <button
-                style={{ marginTop: '1rem' }}
-                className="btn btn-default"
-                onClick={this.onLogOut}
-              >
-              <img 
-                alt=""
-                src="https://image.flaticon.com/icons/svg/149/149407.svg"
-                height="30"
+              <button style={{ marginTop: '1rem' }} onClick={this.onLogOut}>
+                <img
+                  alt=""
+                  src="https://image.flaticon.com/icons/svg/149/149407.svg"
                 />{' '}
                 Log Out
               </button>

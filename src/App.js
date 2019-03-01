@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './containers/Header';
 import Home from './containers/Home';
 import Navbar from './containers/Navbar';
 import Watch from './containers/Watch';
@@ -14,7 +13,6 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        <Header />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/Watch" component={Watch} />

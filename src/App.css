@@ -1,17 +1,12 @@
 .App {
   text-align: center;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 .App-intro {
   font-size: large;
 
-  font-family: "Comic Sans MS", cursive, sans-serif;
-}
-
-.topnav {
-  background-color: black;
-  overflow: hidden;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 /* Style the links inside the navigation bar */
