@@ -20,9 +20,9 @@ class App extends Component {
         <Navbar location={this.props.location} />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/AboutME" component={AboutME} />
           <Route path="/Watch" component={Watch} />
           <Route path="/SocialMedia" component={SocialMedia} />
-          <Route path="/AboutME" component={AboutME} />
           <Route path="/Pictures" component={Pictures} />
         </Switch>
       </div>

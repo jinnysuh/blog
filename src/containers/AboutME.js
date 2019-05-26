@@ -1,5 +1,6 @@
 import React from 'react';
 import { css } from 'emotion';
+import { AST_Break } from 'terser';
 export default function AboutMe() {
   return (
     <div
@@ -22,38 +23,59 @@ export default function AboutMe() {
         </p>
         <h2>
           {' '}
-          <font color="gray"> My Favorite Things</font>
+          <font color="cyan"> My Favorite Subject</font>
         </h2>
         <p>
           <font size="5">
-            My favorite food: <font color="black" />
-            Pizza
-          </font>
-        </p>
-        <p>
-          <font size="5">
-            My favorite book: <font color="gray">Magnus Chase </font>
-          </font>
-        </p>
-        <p>
-          <font size="5">
-            My favorite game: Mine
-            <font color="black">craft</font>
+            My favorite subject is science and I like physics the most.Because I
+            can learn every force that works to us and physic is applied to
+            everything that moves in the world.
           </font>
         </p>
 
         <h3>
-          <font color="purple">My Specialty</font>
+          <font color="orange">
+            <font size="5">My Prizes</font>
+          </font>
         </h3>
         <p>
           <font size="5">
-            I love to <font color="sky blue">Ski</font> and I use to go to
-            Gonjiam Resort.
+            1. Science debate contest <font color="brown">bronze medal</font>
+            (5th grade) <br />
+            2. Science air rocket contest <font color="gray">sliver medal</font>
+            (5th grade) <br />
+            3. Science experiment contest <font color="gray">sliver medal</font>
+            (6th grade)
+            <br />
+            4. Gonjiam Ski resort ski race contest{' '}
+            <font color="brown">bronze medal</font>(6th grade) <br />
+            5. Math and Computer science Olympiad(No prize lol)
+          </font>
+        </p>
+        <h4>
+          <font color="sky blue">
+            <font size="5">My Devices</font>
+          </font>
+        </h4>
+        <p>
+          <font size="5">
+            1. Macbook Pro 13 inch 2017
+            <br />
+            2. Airpod 1<br />
+            3. Galaxy buds 1 <br />
+            4. Logitech mouse G603
+            <br />
+            5. Logitech gaming mouse G102 <br />
+            6. Samsung Galaxy note 4(it sucks)
+            <br />
+            7. Xiaomi Mi Band 2 <br />
+            8. Samsung note book(it sucks too) <br />
           </font>
         </p>
       </section>
-      <section
-        className={css`
+      <section>
+        className=
+        {css`
           background: white;
           width: 30%;
           margin-left: 1rem;
@@ -63,7 +85,7 @@ export default function AboutMe() {
           justify-content: center;
           margin-right: 1rem;
         `}
-      >
+        >
         <div>
           <img
             src="/minecraft_island.png"

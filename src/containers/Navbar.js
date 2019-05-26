@@ -61,6 +61,15 @@ export default function Navbar({ location }) {
               <span>Home</span>
             </Link>
           </li>
+          <li className={location.pathname === '/About Me' ? 'active' : ''}>
+            <Link to="/AboutME">
+              <img
+                alt=""
+                src="https://image.flaticon.com/icons/svg/149/149150.svg"
+              />{' '}
+              <span>AboutME</span>
+            </Link>
+          </li>
           <li className={location.pathname === '/Watch' ? 'active' : ''}>
             <Link to="/Watch">
               <img
@@ -79,15 +88,7 @@ export default function Navbar({ location }) {
               <span color="gray">SocialMedia</span>
             </Link>
           </li>
-          <li className={location.pathname === '/AboutME' ? 'active' : ''}>
-            <Link to="/AboutME">
-              <img
-                alt=""
-                src="https://image.flaticon.com/icons/svg/149/149150.svg"
-              />
-              <span color="gray">AboutME</span>
-            </Link>
-          </li>
+          <li className={location.pathname === '/AboutME' ? 'active' : ''} />
           <li className={location.pathname === '/Pictures' ? 'active' : ''}>
             <Link to="/Pictures">
               <img

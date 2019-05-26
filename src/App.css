@@ -1,12 +1,12 @@
 .App {
   text-align: center;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: "Tahoma", Geneva, sans-seri;
 }
 
 .App-intro {
   font-size: large;
 
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: "Tahoma", Geneva, sans-seri;
 }
 
 /* Style the links inside the navigation bar */
@@ -21,8 +21,8 @@
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
-  font-color: black;
+  background-color: rgb(0, 0, 0);
+  font-color: rgb(204, 204, 204);
 }
 .navigation {
   display: flex;
