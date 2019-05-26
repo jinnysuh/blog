@@ -12,6 +12,9 @@ export default function AboutMe() {
         About <font color="sky blue">ME</font>
       </h1>
       <section>
+        <p>
+          <font size="20">Portfolio</font>
+        </p>
         <h1>
           {' '}
           <font color="black">My Hobbies</font>
