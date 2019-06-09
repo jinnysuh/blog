@@ -1,6 +1,5 @@
 import React from 'react';
 import { css } from 'emotion';
-import { AST_Break } from 'terser';
 export default function AboutMe() {
   return (
     <div
