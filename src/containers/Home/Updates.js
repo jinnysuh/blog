@@ -23,8 +23,15 @@ export default function Updates() {
           />{' '}
           Updates
         </span>
-        <p>Recent Video</p>
-        <Video videoCode="0nRNeHLN85o" />
+        <p>
+          <font size="4">Recent Video</font>
+        </p>
+        <div>
+          <Video videoCode="SI6c9_m57qA" />
+        </div>
+        <div style={{ marginTop: '1rem' }}>
+          <Video videoCode="FIsNSId9mm4" />
+        </div>
       </div>
     </section>
   );

@@ -161,7 +161,7 @@ export default class Home extends Component {
         <div style={{ paddingBottom: '3rem' }}>
           {username && (
             <div style={{ marginTop: '1rem' }}>
-              <p>Hello {username}</p>
+              <p>Hello {username}!</p>
               <div>
                 <input
                   placeholder="Write a message!"
@@ -199,7 +199,7 @@ export default class Home extends Component {
                   src="https://image.flaticon.com/icons/svg/131/131973.svg"
                   height="30"
                 />{' '}
-                Sign In
+                <font size="3">Sign In</font>
               </p>
               <input
                 value={loginUsernameInput}
@@ -222,7 +222,7 @@ export default class Home extends Component {
                 onClick={this.onLogIn}
                 disabled={this.loginButtonDisabled()}
               >
-                Sign In
+                <font size="3">Sign In</font>
               </button>
             </section>
 
@@ -240,7 +240,7 @@ export default class Home extends Component {
                   src="https://image.flaticon.com/icons/svg/25/25284.svg"
                   height="30"
                 />{' '}
-                Sign Up
+                <font size="3">Sign Up</font>
               </p>
               <input
                 value={signUpUsernameInput}
@@ -271,7 +271,7 @@ export default class Home extends Component {
                 onClick={this.onSignUp}
                 disabled={this.signUpButtonDisabled()}
               >
-                Sign Up
+                <font size="3">Sign Up</font>
               </button>
             </section>
           </div>

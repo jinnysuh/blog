@@ -107,11 +107,8 @@ export default function Navbar({ location }) {
           }}
           onClick={onLogOut}
         >
-          <img
-            alt=""
-            src="https://image.flaticon.com/icons/svg/149/149407.svg"
-          />{' '}
-          Log Out
+          {' '}
+          <font size="3">Log Out</font>
         </button>
       </div>
     </div>
