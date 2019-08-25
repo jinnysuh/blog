@@ -5,6 +5,8 @@ import request from 'axios';
 import Dolly from './Dolly';
 import Messages from './Messages';
 import Updates from './Updates';
+import Modal from '../../components/Modal';
+import Sidebar from './Sidebar';
 
 export default class Home extends Component {
   state = {
@@ -16,7 +18,8 @@ export default class Home extends Component {
     signUpPasswordInput: '',
     signUpPasswordConfirm: '',
     messageInput: '',
-    messages: []
+    messages: [],
+    signUpModalShown: false
   };
   async componentDidMount() {
     const token = localStorage.getItem('token');
@@ -156,29 +159,32 @@ export default class Home extends Component {
             </div>
           </div>
         </div>
+        <Sidebar />
         <Dolly />
         <Updates />
-        <div style={{ paddingBottom: '3rem' }}>
-          {username && (
-            <div style={{ marginTop: '1rem' }}>
-              <p>Hello {username}!</p>
-              <div>
-                <input
-                  placeholder="Write a message!"
-                  onChange={e =>
-                    this.setState({ messageInput: e.target.value })
+        <button onClick={() => this.setState({ signUpModalShown: true })}>
+          Sign Up
+        </button>
+        <button onClick={() => console.log('do something')}>Log in</button>
+        {this.state.signUpModalShown && <Modal />}
+        {username && (
+          <div style={{ marginTop: '1rem' }}>
+            <p>Hello {username}!</p>
+            <div>
+              <input
+                placeholder="Write a message!"
+                onChange={e => this.setState({ messageInput: e.target.value })}
+                onKeyUp={event => {
+                  if (event.key === 'Enter') {
+                    this.onSubmitMessage();
                   }
-                  onKeyUp={event => {
-                    if (event.key === 'Enter') {
-                      this.onSubmitMessage();
-                    }
-                  }}
-                  value={messageInput}
-                />
-              </div>
+                }}
+                value={messageInput}
+              />
             </div>
-          )}
-        </div>
+          </div>
+        )}
+
         {!username && (
           <div
             className={css`

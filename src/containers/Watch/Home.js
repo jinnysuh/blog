@@ -1,6 +1,5 @@
 import React from 'react';
 import Video from '../../components/Video';
-import Fade from 'react-reveal/Fade';
 export default function Home() {
   return (
     <div>
