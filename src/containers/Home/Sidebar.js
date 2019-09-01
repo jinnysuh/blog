@@ -16,6 +16,11 @@ export default function Sidebar() {
           <a className="menu-item" href="/">
             Home
           </a>
+          <button onClick={() => this.setState({ signUpModalShown: true })}>
+            Sign Up
+          </button>
+          <button onClick={() => console.log('do something')}>Log in</button>
+          {signUpModalShown && <Modal />}
           <button onClick={() => console.log('do something')}>
             <font size="5">
               <font color="black">Log In</font>
