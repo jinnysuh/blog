@@ -23,6 +23,7 @@ export default class Home extends Component {
   };
   async componentDidMount() {
     const token = localStorage.getItem('token');
+    const [signUpModalShown, setSignUpModalShown] = useState(false);
     try {
       if (token) {
         const {
@@ -32,10 +33,10 @@ export default class Home extends Component {
             authorization: token
           }
         });
-        this.setState({ userId, username });
+        setSignUpModalShown({ userId, username });
       }
       const { data: messages } = await request.get(`${URL}/posts`);
-      this.setState({ messages });
+      setSignUpModalShown({ messages });
     } catch (error) {
       console.error(error);
     }
@@ -162,7 +163,7 @@ export default class Home extends Component {
         <Sidebar />
         <Dolly />
         <Updates />
-        <button onClick={() => this.setState({ signUpModalShown: true })}>
+        <button onClick={() => setSignUpModalShown({ signUpModalShown: true })}>
           Sign Up
         </button>
         <button onClick={() => console.log('do something')}>Log in</button>
@@ -173,7 +174,9 @@ export default class Home extends Component {
             <div>
               <input
                 placeholder="Write a message!"
-                onChange={e => this.setState({ messageInput: e.target.value })}
+                onChange={e =>
+                  setSignUpModalShown({ messageInput: e.target.value })
+                }
                 onKeyUp={event => {
                   if (event.key === 'Enter') {
                     this.onSubmitMessage();
