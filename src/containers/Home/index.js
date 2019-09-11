@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import { css } from 'emotion';
 import URL from '../../constants/URL';
 import request from 'axios';
@@ -8,76 +8,65 @@ import Updates from './Updates';
 import Modal from '../../components/Modal';
 import Sidebar from './Sidebar';
 
-export default class Home extends Component {
-  state = {
-    userId: undefined,
-    username: '',
-    loginUsernameInput: '',
-    loginPasswordInput: '',
-    signUpUsernameInput: '',
-    signUpPasswordInput: '',
-    signUpPasswordConfirm: '',
-    messageInput: '',
-    messages: [],
-    signUpModalShown: false
-  };
-  async componentDidMount() {
-    const token = localStorage.getItem('token');
-    const [signUpModalShown, setSignUpModalShown] = useState(false);
-    try {
-      if (token) {
-        const {
-          data: { userId, username }
-        } = await request.get(`${URL}/users/session`, {
-          headers: {
-            authorization: token
-          }
-        });
-        setSignUpModalShown({ userId, username });
-      }
-      const { data: messages } = await request.get(`${URL}/posts`);
-      setSignUpModalShown({ messages });
-    } catch (error) {
-      console.error(error);
-    }
-  }
+export default function Home() {
+  const [username, setUsername] = useState('');
+  const [loginUsernameInput, setLoginUsernameInput] = useState('');
+  const [loginPasswordInput, setLoginPasswordInput] = useState('');
+  const [signUpUsernameInput, setSignUpUsernameInput] = useState('');
+  const [signUpPasswordInput, setSignUpPasswordInput] = useState('');
+  const [signUpPasswordConfirm, setSignUpPasswordConfirm] = useState('');
+  const [messageInput, setMessageInput] = useState('');
+  const [messages, setMessages] = useState([]);
+  const [signUpModalShown, setSignUpModalShown] = useState(false);
 
-  render() {
-    const {
-      messages,
-      username,
-      loginUsernameInput,
-      loginPasswordInput,
-      messageInput,
-      signUpUsernameInput,
-      signUpPasswordInput,
-      signUpPasswordConfirm
-    } = this.state;
-    return (
+  useEffect(() => {
+    init();
+    async function init() {
+      const token = localStorage.getItem('token');
+      try {
+        if (token) {
+          const {
+            data: { userId, username }
+          } = await request.get(`${URL}/users/session`, {
+            headers: {
+              authorization: token
+            }
+          });
+          setSignUpModalShown({ userId, username });
+        }
+        const { data: messages } = await request.get(`${URL}/posts`);
+        setSignUpModalShown({ messages });
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }, []);
+
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column'
+      }}
+    >
       <div
+        className="App-intro"
         style={{
+          width: '100%',
+          height: '5rem',
           display: 'flex',
-          flexDirection: 'column'
+          justifyContent: 'center'
         }}
       >
         <div
-          className="App-intro"
           style={{
-            width: '100%',
-            height: '5rem',
-            display: 'flex',
-            justifyContent: 'center'
+            position: 'relative',
+            width: '50%',
+            marginTop: '2rem'
           }}
         >
           <div
-            style={{
-              position: 'relative',
-              width: '50%',
-              marginTop: '2rem'
-            }}
-          >
-            <div
-              className={css`
+            className={css`
                 font-size: 3.2rem;
                 text-align: center;
                 font-weight: bold;
@@ -149,214 +138,180 @@ export default class Home extends Component {
                 }
               }
             `}
-            >
-              <span style={{ color: 'black' }}>
-                <font color="black">
-                  <font size="6">
-                    Welcome <font color="gray">{`To Jinny's Website`}</font>
-                  </font>
+          >
+            <span style={{ color: 'black' }}>
+              <font color="black">
+                <font size="6">
+                  Welcome <font color="gray">{`To Jinny's Website`}</font>
                 </font>
-              </span>
-            </div>
+              </font>
+            </span>
           </div>
         </div>
-        <Sidebar />
-        <Dolly />
-        <Updates />
-        <button onClick={() => setSignUpModalShown({ signUpModalShown: true })}>
-          Sign Up
-        </button>
-        <button onClick={() => console.log('do something')}>Log in</button>
-        {this.state.signUpModalShown && <Modal />}
-        {username && (
-          <div style={{ marginTop: '1rem' }}>
-            <p>Hello {username}!</p>
-            <div>
-              <input
-                placeholder="Write a message!"
-                onChange={e =>
-                  setSignUpModalShown({ messageInput: e.target.value })
+      </div>
+      <Sidebar />
+      {signUpModalShown && <div>Modal is Shown!!!</div>}
+      <Dolly />
+      <Updates />
+      <button onClick={() => setSignUpModalShown({ signUpModalShown: true })}>
+        Sign Up
+      </button>
+      <button onClick={() => console.log('do something')}>Log in</button>
+      {signUpModalShown && <Modal />}
+      {username && (
+        <div style={{ marginTop: '1rem' }}>
+          <p>Hello {username}!</p>
+          <div>
+            <input
+              placeholder="Write a message!"
+              onChange={e =>
+                setSignUpModalShown({ messageInput: e.target.value })
+              }
+              onKeyUp={event => {
+                if (event.key === 'Enter') {
+                  onSubmitMessage();
                 }
-                onKeyUp={event => {
-                  if (event.key === 'Enter') {
-                    this.onSubmitMessage();
-                  }
-                }}
-                value={messageInput}
-              />
-            </div>
+              }}
+              value={messageInput}
+            />
           </div>
-        )}
+        </div>
+      )}
 
-        {!username && (
-          <div
+      {!username && (
+        <div
+          className={css`
+            display: flex;
+            justify-content: center;
+          `}
+        >
+          <section
             className={css`
               display: flex;
-              justify-content: center;
+              flex-direction: column;
+              margin-top: 1rem;
             `}
           >
-            <section
-              className={css`
-                display: flex;
-                flex-direction: column;
-                margin-top: 1rem;
-              `}
+            <p>
+              <img
+                alt=""
+                src="https://image.flaticon.com/icons/svg/131/131973.svg"
+                height="30"
+              />{' '}
+              <font size="3">Sign In</font>
+            </p>
+            <input
+              value={loginUsernameInput}
+              onChange={event => setLoginUsernameInput(event.target.value)}
+              placeholder="write your username"
+            />
+            <input
+              value={loginPasswordInput}
+              type="password"
+              onChange={event => setLoginPasswordInput(event.target.value)}
+              placeholder="write your password"
+            />
+            <button
+              className="btn btn-default"
+              style={{ marginTop: '1rem' }}
+              onClick={onLogIn}
+              disabled={loginButtonDisabled()}
             >
-              <p>
-                <img
-                  alt=""
-                  src="https://image.flaticon.com/icons/svg/131/131973.svg"
-                  height="30"
-                />{' '}
-                <font size="3">Sign In</font>
-              </p>
-              <input
-                value={loginUsernameInput}
-                onChange={event =>
-                  this.setState({ loginUsernameInput: event.target.value })
-                }
-                placeholder="write your username"
-              />
-              <input
-                value={loginPasswordInput}
-                type="password"
-                onChange={event =>
-                  this.setState({ loginPasswordInput: event.target.value })
-                }
-                placeholder="write your password"
-              />
-              <button
-                className="btn btn-default"
-                style={{ marginTop: '1rem' }}
-                onClick={this.onLogIn}
-                disabled={this.loginButtonDisabled()}
-              >
-                <font size="3">Sign In</font>
-              </button>
-            </section>
+              <font size="3">Sign In</font>
+            </button>
+          </section>
 
-            <section
-              className={css`
-                display: flex;
-                flex-direction: column;
-                margin-top: 1rem;
-                margin-left: 1rem;
-              `}
+          <section
+            className={css`
+              display: flex;
+              flex-direction: column;
+              margin-top: 1rem;
+              margin-left: 1rem;
+            `}
+          >
+            <p>
+              <img
+                alt=""
+                src="https://image.flaticon.com/icons/svg/25/25284.svg"
+                height="30"
+              />{' '}
+              <font size="3">Sign Up</font>
+            </p>
+            <input
+              value={signUpUsernameInput}
+              onChange={event => setSignUpUsernameInput(event.target.value)}
+              placeholder="Write your username"
+            />
+            <input
+              value={signUpPasswordInput}
+              type="password"
+              onChange={event => setSignUpPasswordInput(event.target.value)}
+              placeholder="Write your password"
+            />
+            <input
+              value={signUpPasswordConfirm}
+              type="password"
+              onChange={event => setSignUpPasswordConfirm(event.target.value)}
+              placeholder=" Confirm your password"
+            />
+            <button
+              className="btn btn-default"
+              style={{ marginTop: '1rem' }}
+              onClick={onSignUp}
+              disabled={signUpButtonDisabled()}
             >
-              <p>
-                <img
-                  alt=""
-                  src="https://image.flaticon.com/icons/svg/25/25284.svg"
-                  height="30"
-                />{' '}
-                <font size="3">Sign Up</font>
-              </p>
-              <input
-                value={signUpUsernameInput}
-                onChange={event =>
-                  this.setState({ signUpUsernameInput: event.target.value })
-                }
-                placeholder="Write your username"
-              />
-              <input
-                value={signUpPasswordInput}
-                type="password"
-                onChange={event =>
-                  this.setState({ signUpPasswordInput: event.target.value })
-                }
-                placeholder="Write your password"
-              />
-              <input
-                value={signUpPasswordConfirm}
-                type="password"
-                onChange={event =>
-                  this.setState({ signUpPasswordConfirm: event.target.value })
-                }
-                placeholder=" Confirm your password"
-              />
-              <button
-                className="btn btn-default"
-                style={{ marginTop: '1rem' }}
-                onClick={this.onSignUp}
-                disabled={this.signUpButtonDisabled()}
-              >
-                <font size="3">Sign Up</font>
-              </button>
-            </section>
-          </div>
-        )}
-        <Messages messages={messages} />
-      </div>
-    );
-  }
+              <font size="3">Sign Up</font>
+            </button>
+          </section>
+        </div>
+      )}
+      <Messages messages={messages} />
+    </div>
+  );
 
-  onDelete = async postId => {
-    await request.delete(`${URL}/posts?id=${postId}`);
-    this.setState(state => ({
-      messages: state.messages.filter(msg => msg.id !== postId)
-    }));
-  };
-
-  onSignUp = async() => {
-    const { signUpUsernameInput, signUpPasswordInput } = this.state;
+  async function onSignUp() {
     try {
       const {
-        data: { alreadyExists, token, userId }
+        data: { alreadyExists, token }
       } = await request.post(`${URL}/users`, {
         username: signUpUsernameInput,
         password: signUpPasswordInput
       });
       if (alreadyExists) return window.alert('User already exists');
       localStorage.setItem('token', token);
-      this.setState({
-        userId,
-        username: signUpUsernameInput
-      });
+      setUsername(signUpUsernameInput);
     } catch (error) {
       console.error(error);
     }
-  };
+  }
 
-  onLogIn = async() => {
-    const { loginUsernameInput, loginPasswordInput } = this.state;
+  async function onLogIn() {
     try {
       const {
-        data: { token, userId }
+        data: { token }
       } = await request.get(
         `${URL}/users?username=${loginUsernameInput}&password=${loginPasswordInput}`
       );
       localStorage.setItem('token', token);
-      this.setState({
-        userId,
-        username: loginUsernameInput
-      });
+      setUsername(loginUsernameInput);
     } catch (error) {
       console.error(error);
     }
-  };
+  }
 
-  onSubmitMessage = async() => {
-    const { messageInput } = this.state;
+  async function onSubmitMessage() {
     const { data } = await request.post(`${URL}/posts`, { post: messageInput });
-    this.setState(state => ({
-      messageInput: '',
-      messages: state.messages.concat(data)
-    }));
-  };
+    setMessageInput('');
+    setMessages(messages => messages.concat(data));
+  }
 
-  loginButtonDisabled = () => {
-    const { loginUsernameInput, loginPasswordInput } = this.state;
+  function loginButtonDisabled() {
     let result = false;
     if (!loginUsernameInput || !loginPasswordInput) result = true;
     return result;
-  };
+  }
 
-  signUpButtonDisabled = () => {
-    const {
-      signUpUsernameInput,
-      signUpPasswordInput,
-      signUpPasswordConfirm
-    } = this.state;
+  function signUpButtonDisabled() {
     let result = false;
     if (
       !signUpUsernameInput ||
@@ -367,5 +322,5 @@ export default class Home extends Component {
     }
     if (signUpPasswordConfirm !== signUpPasswordInput) result = true;
     return result;
-  };
+  }
 }
