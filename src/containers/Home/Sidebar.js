@@ -12,21 +12,24 @@ export default function Sidebar() {
           overflow: 'auto'
         }}
       >
+        {signUpModalShown && (
+          <Modal onHide={() => setSignUpModalShown(false)} />
+        )}
         <Menu>
           <a className="menu-item" href="/">
             Home
           </a>
-          <button onClick={() => setSignUpModalShown({ signUpModalShown: true })}>
+          <button
+            onClick={() => setSignUpModalShown({ signUpModalShown: true })}
+          >
             Sign Up
           </button>
           <button onClick={() => console.log('do something')}>Log in</button>
-          {signUpModalShown && <Modal />}
           <button onClick={() => console.log('do something')}>
             <font size="5">
               <font color="black">Log In</font>
             </font>
           </button>
-          {signUpModalShown && <Modal />}
           <button onClick={() => setSignUpModalShown(true)}>
             <font size="5">
               <font color="black">Sign Up</font>

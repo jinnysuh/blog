@@ -5,7 +5,6 @@ import request from 'axios';
 import Dolly from './Dolly';
 import Messages from './Messages';
 import Updates from './Updates';
-import Modal from '../../components/Modal';
 import Sidebar from './Sidebar';
 
 export default function Home() {
@@ -17,7 +16,6 @@ export default function Home() {
   const [signUpPasswordConfirm, setSignUpPasswordConfirm] = useState('');
   const [messageInput, setMessageInput] = useState('');
   const [messages, setMessages] = useState([]);
-  const [signUpModalShown, setSignUpModalShown] = useState(false);
 
   useEffect(() => {
     init();
@@ -26,16 +24,16 @@ export default function Home() {
       try {
         if (token) {
           const {
-            data: { userId, username }
+            data: { username }
           } = await request.get(`${URL}/users/session`, {
             headers: {
               authorization: token
             }
           });
-          setSignUpModalShown({ userId, username });
+          setUsername(username);
         }
         const { data: messages } = await request.get(`${URL}/posts`);
-        setSignUpModalShown({ messages });
+        setMessages(messages);
       } catch (error) {
         console.error(error);
       }
@@ -150,23 +148,16 @@ export default function Home() {
         </div>
       </div>
       <Sidebar />
-      {signUpModalShown && <div>Modal is Shown!!!</div>}
       <Dolly />
       <Updates />
-      <button onClick={() => setSignUpModalShown({ signUpModalShown: true })}>
-        Sign Up
-      </button>
       <button onClick={() => console.log('do something')}>Log in</button>
-      {signUpModalShown && <Modal />}
       {username && (
         <div style={{ marginTop: '1rem' }}>
           <p>Hello {username}!</p>
           <div>
             <input
               placeholder="Write a message!"
-              onChange={e =>
-                setSignUpModalShown({ messageInput: e.target.value })
-              }
+              onChange={e => setMessageInput(e.target.value)}
               onKeyUp={event => {
                 if (event.key === 'Enter') {
                   onSubmitMessage();
