@@ -15,6 +15,9 @@ export default function Modal(props) {
       }}
     >
       I am a Modal!
+      <textarea rows="4" cols="50">
+At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
+</textarea>
     </div>
   );
 }
