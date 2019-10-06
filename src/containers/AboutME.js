@@ -77,6 +77,9 @@ export default function AboutMe() {
               7. Xiaomi Mi Band 2 <br />
               8. Samsung note book(it sucks too) <br />
               9. Galaxy Watch Active 1<br />
+              10. Iphone 7<br/>
+              11. Iphone 8+<br/>
+              12. Samsung Galaxy Note 10+
             </font>
           </p>
         </section>
