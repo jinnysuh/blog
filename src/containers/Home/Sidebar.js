@@ -13,7 +13,7 @@ export default function Sidebar() {
         }}
       >
         {signUpModalShown && (
-          <Modal onClick={() => setSignUpModalShown(false)} />
+          <Modal onClick={() => setSignUpModalShown(true)} />
         )}
         <Menu>
           <a className="menu-item" href="/">
